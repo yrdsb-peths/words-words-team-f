@@ -9,10 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MenuScreen extends World
 {
 
-    /**
-     * Constructor for objects of class MenuScreen.
-     * 
-     */
+    private GreenfootImage pressSpaceImage; 
+    
     public MenuScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -20,12 +18,25 @@ public class MenuScreen extends World
         //menuScreenbg
         setBackground(new GreenfootImage("menuScreenbg.png"));
         
-        addObject(new Button(this::goLevelSelect, "levelOneButton.png"), getWidth()/2, getHeight()/2);
+        GreenfootImage pressSpaceImage = new GreenfootImage("pressSpace.png");
+        getBackground().drawImage(pressSpaceImage, 250 , 331);
     }
     
-
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            //delay for sound effect to play and animation
+            Greenfoot.delay(60);
+            
+            goLevelSelect();
+        }
+    }
+    
+    
     public void goLevelSelect()
     {
         Greenfoot.setWorld(new LevelSelect());
     }
+    
 }
