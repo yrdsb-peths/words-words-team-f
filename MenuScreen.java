@@ -13,8 +13,12 @@ public class MenuScreen extends World
     private boolean spacePressed = false;
     private int animationStep = 0; //frame count
     
+    private int pulseAni = 0; // breathing effect for press space
+    private boolean growing = true; 
+    
     private int originalWidth = 130; //original width for the press start image
     private int originalHeight = 44; //original height for the press start image
+    private double scaleVar = 1.0; 
     
     public MenuScreen()
     {    
@@ -27,8 +31,15 @@ public class MenuScreen extends World
         getBackground().drawImage(pressSpaceImage, 250 , 331);
     }
     
+    
     public void act()
     {   
+        if(!spacePressed)
+        {
+            animateBreathingSpace(); 
+        }
+        
+        
         if(Greenfoot.isKeyDown("space") && !spacePressed)
         {
             spacePressed = true; 
@@ -40,6 +51,43 @@ public class MenuScreen extends World
         }
         
     }
+    
+    
+    
+    private void animateBreathingSpace()
+    {
+        if(growing)
+        {
+            scaleVar += 0.01;
+            if(scaleVar >= 1.1) //once it is at 1.1x, start shrinking again
+            {
+                growing = false;
+            }
+        }
+        else
+        {
+            scaleVar -= 0.01; 
+            if(scaleVar <= 0.9) //once it is at 0.9, set growing to true so it will continue growing
+            {
+                growing = true; 
+            }
+        }
+        
+        int scaledWidth = (int)(originalWidth * scaleVar); 
+        int scaledHeight = (int)(originalHeight * scaleVar); 
+        
+        GreenfootImage scaledImage = new GreenfootImage(pressSpaceImage); 
+        scaledImage.scale(scaledWidth, scaledHeight); //create scaled ver of press space image
+        
+        getBackground().clear(); 
+        setBackground(new GreenfootImage("menuScreenbg.png"));
+        
+        int xPos = 250 - (scaledWidth - originalWidth) / 2;
+        int yPos = 331 - (scaledHeight - originalHeight) / 2; 
+        getBackground().drawImage(scaledImage, xPos, yPos); 
+        
+    }
+
     
     private void animatePressedSpace()
     {
