@@ -58,7 +58,7 @@ public class MenuScreen extends World
     {
         if(growing)
         {
-            scaleVar += 0.01;
+            scaleVar += 0.005;
             if(scaleVar >= 1.1) //once it is at 1.1x, start shrinking again
             {
                 growing = false;
@@ -66,7 +66,7 @@ public class MenuScreen extends World
         }
         else
         {
-            scaleVar -= 0.01; 
+            scaleVar -= 0.005; 
             if(scaleVar <= 0.9) //once it is at 0.9, set growing to true so it will continue growing
             {
                 growing = true; 
