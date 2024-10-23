@@ -20,6 +20,12 @@ public class MenuScreen extends World
         //menuScreenbg
         setBackground(new GreenfootImage("menuScreenbg.png"));
         
-        
+        addObject(new Button(this::goLevelSelect, "levelOneButton.png"), getWidth()/2, getHeight()/2);
+    }
+    
+
+    public void goLevelSelect()
+    {
+        Greenfoot.setWorld(new LevelSelect());
     }
 }

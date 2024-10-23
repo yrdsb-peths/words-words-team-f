@@ -21,6 +21,15 @@ public class LevelSelect extends World
         //add scrolling inifnite bg 
         
         //add buttons for the level select.
+        addObject(new Button(this::goLevelOne, "levelOneButton.png"), getWidth()/2, getHeight()/2);
         
     }
+    
+     
+    public void goLevelOne()
+    {
+        Greenfoot.setWorld(new LevelOne());
+    }
+    
+    
 }
