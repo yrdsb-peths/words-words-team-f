@@ -13,7 +13,8 @@ public class MenuScreen extends World
     private boolean spacePressed = false;
     private int animationStep = 0; 
     
-    
+    private int originalWidth = 130; //original width for the press start image
+    private int originalHeight = 44; //original height for the press start image
     
     public MenuScreen()
     {    
@@ -44,18 +45,28 @@ public class MenuScreen extends World
     {
         if(animationStep < 60) //60 so one second (60) frames
         {
-            int scale = (int)(pressSpaceImage.getWidth() * (1 + 0.02 * animationStep));
+            double scaleVar = 1 + 0.02 * animationStep; // 2% each increment
+            
+            int scaledWidth = (int)(originalWidth * scaleVar); 
+            int scaledHeight = (int) (originalHeight * scaleVar); 
+            
             int opacity = Math.max(0, 225 - (int)(4.25 * animationStep));
             
             GreenfootImage scaledImage = new GreenfootImage(pressSpaceImage);
-            scaledImage.scale(scale, scale);
+            
+            
+            scaledImage.scale(scaledWidth, scaledHeight);
             scaledImage.setTransparency(opacity); 
             
-            //clear current frame and draw the next one
             
+            //clear current frame and draw the next one
             getBackground().clear(); 
             setBackground(new GreenfootImage("menuScreenbg.png")); 
-            getBackground().drawImage(scaledImage, 250 - (scale - pressSpaceImage.getWidth()) / 2, 331 - (scale - pressSpaceImage.getHeight()) / 2); 
+            
+            int xPos = 250 - (scaledWidth - originalWidth) / 2; 
+            int yPos = 331 - (scaledHeight - originalHeight) / 2;
+            
+            getBackground().drawImage(scaledImage, xPos, yPos); 
             
             // to next frame
             animationStep++; 
