@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LevelSelect extends World
 {
     private GreenfootImage background;
+    private GreenfootImage differentMapText;
     private int scrollX;
     private int scrollY;
     private int counter;
@@ -22,17 +23,20 @@ public class LevelSelect extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         background = new GreenfootImage("newstripebg.png");
+        
         scrollX = 0;
         scrollY = 0;
         counter = 0;
-        
         
         // buttons for the level select
         addObject(new Button(this::goLevelOne, "levelOneButton.png", "levelOneButton.png"), getWidth()/2, getHeight()/2);
         addObject(new Button(this::goLevelTwo, "levelbutton2.png", "levelbutton2.png"), getWidth()/2, getHeight()/2 + 60); 
         addObject(new Button(this::goLevelThree, "levelbutton3.png", "levelbutton3.png"), getWidth()/2, getHeight()/2 + 120);
         
-        //add back to menu button
+        levelTitle title = new levelTitle(); 
+        addObject(title, 300, 130); 
+        
+        //back to menu button
         addObject(new Button(this::goMenu, "returnButton.png", "returnButton.png"), 110, 45);
     }
     
