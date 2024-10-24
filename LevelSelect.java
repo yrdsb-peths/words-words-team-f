@@ -27,12 +27,12 @@ public class LevelSelect extends World
         counter = 0;
         
         
-        //add buttons for the level select.
-        addObject(new Button(this::goLevelOne, "levelOneButton.png"), getWidth()/2, getHeight()/2);
-        addObject(new Button(this::goLevelTwo, "levelbutton2.png"), getWidth()/2, getHeight()/2 + 60); 
-        addObject(new Button(this::goLevelThree, "levelbutton3.png"), getWidth()/2, getHeight()/2 + 120);
+        // buttons for the level select
+        addObject(new Button(this::goLevelOne, "levelOneButton.png", "levelOneButton.png"), getWidth()/2, getHeight()/2);
+        addObject(new Button(this::goLevelTwo, "levelbutton2.png", "levelbutton2.png"), getWidth()/2, getHeight()/2 + 60); 
+        addObject(new Button(this::goLevelThree, "levelbutton3.png", "levelbutton3.png"), getWidth()/2, getHeight()/2 + 120);
         
-        
+        //add back to menu button
     }
     
     public void act()
