@@ -22,7 +22,7 @@ public class LevelSelect extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        background = new GreenfootImage("newstripebg.png");
+        background = new GreenfootImage("blueStripeBg.png");
         
         scrollX = 0;
         scrollY = 0;
