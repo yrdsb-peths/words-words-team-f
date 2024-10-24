@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.GreenfootSound;
 
 /**
  * Write a description of class MenuScreen here.
@@ -20,6 +21,11 @@ public class MenuScreen extends World
     private int originalHeight = 44; //original height for the press start image
     private double scaleVar = 1.0; 
     
+    private GreenfootSound bgMusic = new GreenfootSound("Pokemon ORAS Soundtrack - Flight to Space (128kbps).mp3");
+    private Boolean musicPlaying = false;
+    
+    private GreenfootSound selectSound = new GreenfootSound("menuSelectSound.mp3");
+    
     public MenuScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -29,8 +35,40 @@ public class MenuScreen extends World
         
         pressSpaceImage = new GreenfootImage("pressSpace.png");
         getBackground().drawImage(pressSpaceImage, 250 , 331);
+        
+        //preloading to avoid delay
+        bgMusic.play();
+        bgMusic.stop();
     }
     
+    public void started()
+    {
+        if(!musicPlaying)
+        {
+            bgMusic.playLoop();
+            bgMusic.setVolume(40);
+            musicPlaying = true;
+        }
+    }
+    
+    public void stopped()
+    {
+        if(musicPlaying)
+        {
+            bgMusic.stop();
+            musicPlaying = false; 
+        }
+    }
+    
+    
+    public void stopMusic()
+    {
+        if(musicPlaying)
+        {
+            bgMusic.stop();
+            musicPlaying = false; 
+        }
+    }
     
     public void act()
     {   
@@ -47,8 +85,10 @@ public class MenuScreen extends World
         
         if(spacePressed)
         {
+            selectSound.play(); 
             animatePressedSpace(); 
         }
+      
         
     }
     
