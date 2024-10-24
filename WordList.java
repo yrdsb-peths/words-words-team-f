@@ -11,6 +11,7 @@ public class WordList extends Actor
         //each map will have their own difficulty
         //three maps in total
         
+        //there should be three different lists in each class
         //map 1: normal kitchen
         //dish 1 (easy): rataoiile
         ingredients.add("tomato");
