@@ -17,5 +17,9 @@ public class IntroScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        showText("Games and allat...",300,200);
+        //game studios
+        //create fade out class?
+        //fade out and into menuScreen
     }
 }
