@@ -7,10 +7,11 @@ public class LevelOne extends World
     private ArrayList<String> ingredients = new ArrayList<String>();
     private String[] userAnswers = new String[3]; 
     private int currentAnswerIndex = 0; 
-    
+
     public LevelOne()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        
         super(600, 400, 1);         
         showText("this is level one", 300,200);
         //setImage(image);
@@ -18,6 +19,12 @@ public class LevelOne extends World
         ingredients.add("tomato");
         ingredients.add("cucumber");
         ingredients.add("carrot");
+        
+        setBackground(new GreenfootImage("map1bg.png")); 
+        
+        PlayerInput playerInput = new PlayerInput(); 
+        addObject(playerInput, 300, 200); 
+        
     }
     
     public void act()

@@ -17,12 +17,15 @@ public class WordList extends Actor
         ingredients.add("tomato");
         ingredients.add("cucumber");
         ingredients.add("carrot");
+        
         //dish 1 (hard): cake
         ingredients.add("egg");
         ingredients.add("flour");
         ingredients.add("milk");
         ingredients.add("love");
         ingredients.add("sugar");
+        
+        
         //map 2: pirate ship
         //dish 1: fish feast
         ingredients.add("fish");
