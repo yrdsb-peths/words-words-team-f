@@ -26,6 +26,9 @@ public class MenuScreen extends World
     
     private GreenfootSound selectSound = new GreenfootSound("menuSelectSound.mp3");
     
+    
+    private GreenfootImage whiteOverlay;
+    private int fadeOpacity = 225; //225 is the max opacity
     public MenuScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -39,6 +42,12 @@ public class MenuScreen extends World
         //preloading to avoid delay
         bgMusic.play();
         bgMusic.stop();
+        
+        
+        whiteOverlay = new GreenfootImage(getWidth(), getHeight());
+        whiteOverlay.setColor(Color.WHITE); 
+        whiteOverlay.fill(); 
+        
     }
     
     public void started()
@@ -55,7 +64,7 @@ public class MenuScreen extends World
     {
         if(musicPlaying)
         {
-            bgMusic.stop();
+            bgMusic.pause();
             musicPlaying = false; 
         }
     }
@@ -88,11 +97,29 @@ public class MenuScreen extends World
             selectSound.play(); 
             animatePressedSpace(); 
         }
-      
+        
+        //white fade in for intro
+        if(fadeOpacity > 0)
+        {
+            fadeInEffect(); 
+        }
         
     }
     
-    
+    private void fadeInEffect()
+    {
+        whiteOverlay.setTransparency(fadeOpacity); 
+        getBackground().drawImage(whiteOverlay, 0, 0); 
+        
+        fadeOpacity -= 3; //basically speed of fade out
+        
+        if(fadeOpacity < 0)
+        {
+            fadeOpacity = 0;
+        }
+        
+        
+    }
     
     private void animateBreathingSpace()
     {
