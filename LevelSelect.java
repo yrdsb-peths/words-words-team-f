@@ -33,6 +33,7 @@ public class LevelSelect extends World
         addObject(new Button(this::goLevelThree, "levelbutton3.png", "levelbutton3.png"), getWidth()/2, getHeight()/2 + 120);
         
         //add back to menu button
+        addObject(new Button(this::goMenu, "returnButton.png", "returnButton.png"), 110, 45);
     }
     
     public void act()
@@ -87,4 +88,10 @@ public class LevelSelect extends World
     {
         Greenfoot.setWorld(new LevelThree());
     }
+    
+    private void goMenu()
+    {
+        Greenfoot.setWorld(new MenuScreen());
+    }
+    
 }

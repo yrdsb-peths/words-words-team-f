@@ -16,11 +16,13 @@ public class Button extends Actor {
         buttonImage = new GreenfootImage(imageName);
         hoverImage = new GreenfootImage(hoverimgName); 
         
+        //enlarge the image when mouse is hovered over
         hoverImage.scale((int)(hoverImage.getWidth() + 20), (int)(hoverImage.getHeight() + 10));
+       
         // Set combined image as the actor's image
         setImage(buttonImage);
     }
-
+    
     //check if user clicked on (this) obeject. 
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
