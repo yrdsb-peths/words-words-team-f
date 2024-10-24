@@ -3,76 +3,80 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GameWorld extends World {
-    private List<String> wordsToMemorize;  // List of words
-    private String[] wordsArray = {"apple", "banana", "cherry", "orange", "grape"};  // Example words
-    private int currentWordIndex = 0;  // Index to track which word is being checked
+    private List<String> words;
+    private String[] wordsArray = {"apple", "banana", "cherry", "orange", "grape"};
     private boolean showingWords = true;
-    private int timerSet = 100;  // Countdown timer to show the words
-    private String userInput = "";  // To store typed characters
+    private int timerSet = 200;
+    private String userInput = "";
     private boolean isInputEnabled = false;
+    private int timeLimit = 200;
+    private int timeRemaining = timeLimit;
 
     public GameWorld() {
         super(600, 400, 1);
-        wordsToMemorize = Arrays.asList(wordsArray);  // Convert array to list
-        showWordsToMemorize();  // Show the words at the start
+        words = Arrays.asList(wordsArray);
+        showWordsToMemorize();
     }
 
     public void act() {
+        updateTimer();
+
         if (showingWords) {
             if (timerSet > 0) {
-                timerSet--;  // Countdown to hide the words
+                timerSet--;
             } else {
-                clearScreen();  // Hide words after the timer ends
-                showingWords = false;  // Stop showing words
-                isInputEnabled = true;  // Enable input
+                clearScreen();
+                showingWords = false;
+                isInputEnabled = true;
             }
         } else {
             if (isInputEnabled) {
-                handleUserTyping();  // Capture keyboard input if enabled
+                handleUserTyping();
             }
         }
     }
 
-    // Display words to memorize
     private void showWordsToMemorize() {
         StringBuilder displayText = new StringBuilder("Memorize these words:\n");
-        for (String word : wordsToMemorize) {
+        for (String word : words) {
             displayText.append(word).append(" ");
         }
-        showText(displayText.toString(), 300, 200);  // Show the words in the middle of the screen
+        showText(displayText.toString(), 300, 200);
     }
 
-    // Clear the screen
     private void clearScreen() {
-        showText("", 300, 200);  // Clear the words from the screen
+        showText("", 300, 200);
     }
 
-    // Handle the typing input from the player
     private void handleUserTyping() {
-        // Loop through possible characters to check if a key is pressed
-        String[] possibleKeys = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "space"};
+        String[] possibleKeys = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "space"};
         for (String key : possibleKeys) {
             if (Greenfoot.isKeyDown(key)) {
                 if (key.equals("space")) {
-                    userInput += " ";  // Add space if spacebar is pressed
+                    userInput += " ";
                 } else {
-                    userInput += key;  // Add the pressed key to the input
+                    userInput += key;
                 }
-                Greenfoot.delay(5);  // Slight delay to prevent rapid input
+                Greenfoot.delay(5);
             }
         }
-        if(Greenfoot.isKeyDown("backspace") && userInput.length() > 0)
-        {
+        if (Greenfoot.isKeyDown("backspace") && userInput.length() > 0) {
             userInput = userInput.substring(0, userInput.length() - 1);
-            Greenfoot.delay(10);
+            Greenfoot.delay(5);
         }
-        // Check if Enter is pressed to submit the input
         if (Greenfoot.isKeyDown("enter")) {
-            userInput = "";  // Reset the input after checking
-            Greenfoot.delay(10);  // Delay to avoid multiple entries
+            userInput = "";
+            Greenfoot.delay(5);
         }
+        showText("Typed: " + userInput, 300, 350);
+    }
 
-        // Display the typed text on the screen
-        showText("Typed: " + userInput, 300, 350);  // Show typed characters at the bottom
+    private void updateTimer() {
+        if (timeRemaining > 0) {
+            timeRemaining--;
+        }
+    
+        int secondsRemaining = timeRemaining / 60;
+        showText("Time to memorize: " + secondsRemaining + "s", 300, 50);  // Display remaining time
     }
 }
