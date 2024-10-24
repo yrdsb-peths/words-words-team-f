@@ -7,7 +7,7 @@ public class GameWorld extends World {
     private String[] wordsArray = {"apple", "banana", "cherry", "orange", "grape"};  // Example words
     private int currentWordIndex = 0;  // Index to track which word is being checked
     private boolean showingWords = true;
-    private int timer = 100;  // Countdown timer to show the words
+    private int timerSet = 100;  // Countdown timer to show the words
     private String userInput = "";  // To store typed characters
     private boolean isInputEnabled = false;
 
@@ -19,8 +19,8 @@ public class GameWorld extends World {
 
     public void act() {
         if (showingWords) {
-            if (timer > 0) {
-                timer--;  // Countdown to hide the words
+            if (timerSet > 0) {
+                timerSet--;  // Countdown to hide the words
             } else {
                 clearScreen();  // Hide words after the timer ends
                 showingWords = false;  // Stop showing words
