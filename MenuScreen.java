@@ -42,7 +42,6 @@ public class MenuScreen extends World
         whiteOverlay.setColor(Color.WHITE); 
         whiteOverlay.fill(); 
         
-        MusicManager.playMusic(); 
     }
     
     
@@ -72,6 +71,20 @@ public class MenuScreen extends World
         }
         
     }
+    
+    
+    
+    public void started()
+    {
+        MusicManager.playMusic(); 
+    }
+    
+    
+    public void stopped()
+    {
+        MusicManager.pauseMusic(); 
+    }
+    
     
     private void fadeInEffect()
     {
