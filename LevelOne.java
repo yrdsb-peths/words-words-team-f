@@ -20,6 +20,9 @@ public class LevelOne extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         
         super(600, 400, 1);         
+        
+        MusicManager.stopMusic();
+        
         showText("this is level one", 300,200);
         //setImage(image);
         //setWords
