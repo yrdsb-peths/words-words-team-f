@@ -36,9 +36,9 @@ public class LevelOne extends World
         TextBox textBoxTwo = new TextBox();
         TextBox textBoxThree = new TextBox(); 
         
-        addObject(textBox, 104, 308);
-        addObject(textBoxTwo, 307, 308);
-        addObject(textBoxThree, 503, 308);
+        addObject(textBox, 104, 206);
+        addObject(textBoxTwo, 307, 206);
+        addObject(textBoxThree, 503, 206);
         
         words = new ArrayList<>(Arrays.asList("apple", "banana", "cherry", "orange", "grape"));
         possibleKeys = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "space"));
