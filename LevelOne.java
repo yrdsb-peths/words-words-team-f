@@ -32,9 +32,6 @@ public class LevelOne extends World
         
         setBackground(new GreenfootImage("map1bg.png")); 
         
-        PlayerInput playerInput = new PlayerInput(); 
-        addObject(playerInput, 300, 200); 
-        
         TextBox textBox = new TextBox();
         TextBox textBoxTwo = new TextBox();
         TextBox textBoxThree = new TextBox(); 
