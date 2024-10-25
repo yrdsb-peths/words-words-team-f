@@ -1,20 +1,23 @@
 import greenfoot.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class GameWorld extends World {
-    private List<String> words;
-    private String[] wordsArray = {"apple", "banana", "cherry", "orange", "grape"};
+    private ArrayList<String> words;
+    private ArrayList<String> possibleKeys;
     private boolean showingWords = true;
-    private int timerSet = 200;
-    private String userInput = "";
     private boolean isInputEnabled = false;
+    private String userInput = "";
+    private int timerSet = 200;
     private int timeLimit = 200;
     private int timeRemaining = timeLimit;
-
     public GameWorld() {
         super(600, 400, 1);
-        words = Arrays.asList(wordsArray);
+        
+        words = new ArrayList<>(Arrays.asList("apple", "banana", "cherry", "orange", "grape"));
+        possibleKeys = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "space"));
+        
         showWordsToMemorize();
     }
 
@@ -49,7 +52,6 @@ public class GameWorld extends World {
     }
 
     private void handleUserTyping() {
-        String[] possibleKeys = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "space"};
         for (String key : possibleKeys) {
             if (Greenfoot.isKeyDown(key)) {
                 if (key.equals("space")) {
