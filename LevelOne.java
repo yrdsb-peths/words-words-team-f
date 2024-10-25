@@ -25,6 +25,13 @@ public class LevelOne extends World
         PlayerInput playerInput = new PlayerInput(); 
         addObject(playerInput, 300, 200); 
         
+        TextBox textBox = new TextBox();
+        TextBox textBoxTwo = new TextBox();
+        TextBox textBoxThree = new TextBox(); 
+        
+        addObject(textBox, 104, 308);
+        addObject(textBoxTwo, 307, 308);
+        addObject(textBoxThree, 503, 308);
     }
     
     public void act()
