@@ -7,14 +7,9 @@ public class LevelOne extends World
     private boolean showingWords = true;
     private boolean isInputEnabled = false;
     private ArrayList<String> ingredients = new ArrayList<String>();
-    private ArrayList<String> words;
-    private ArrayList<String> possibleKeys;
-    private String[] userAnswers = new String[3];
-    private String userInput = "";
-    private int currentAnswerIndex = 0; 
-    private int timerSet = 200;
-    private int timeLimit = 200;
-    private int timeRemaining = timeLimit;
+    
+    private PlayerInput playerInput;
+    
     public LevelOne()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -40,10 +35,8 @@ public class LevelOne extends World
         addObject(textBoxTwo, 307, 206);
         addObject(textBoxThree, 503, 206);
         
-        words = new ArrayList<>(Arrays.asList("apple", "banana", "cherry", "orange", "grape"));
-        possibleKeys = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "space"));
-        
-        showWords();
+        playerInput = new PlayerInput();
+        addObject(playerInput, 300, 350); 
     }
     
     public void act()
@@ -55,66 +48,12 @@ public class LevelOne extends World
             {
                 showText("", 300, 200);  // Clear the intro text
                 gameStarted = true;
-                showWords();
+                playerInput.showWords(); 
             }
         }
-        updateTimer();
 
-        if (showingWords) {
-            if (timerSet > 0) {
-                timerSet--;
-            } else {
-                clearScreen();
-                showingWords = false;
-                isInputEnabled = true;
-            }
-        } else {
-            if (isInputEnabled) {
-                handleUserTyping();
-            }
-        }
+       
     }
     
-    private void showWords() {
-        StringBuilder displayText = new StringBuilder("Memorize these words:\n");
-        for (String word : words) {
-            displayText.append(word).append(" ");
-        }
-        showText(displayText.toString(), 300, 200);
-    }
-
-    private void clearScreen() {
-        showText("", 300, 200);
-    }
-
-    private void handleUserTyping() {
-        for (String key : possibleKeys) {
-            if (Greenfoot.isKeyDown(key)) {
-                if (key.equals("space")) {
-                    userInput += " ";
-                } else {
-                    userInput += key;
-                }
-                Greenfoot.delay(5);
-            }
-        }
-        if (Greenfoot.isKeyDown("backspace") && userInput.length() > 0) {
-            userInput = userInput.substring(0, userInput.length() - 1);
-            Greenfoot.delay(5);
-        }
-        if (Greenfoot.isKeyDown("enter")) {
-            userInput = "";
-            Greenfoot.delay(5);
-        }
-        showText("Typed: " + userInput, 300, 350);
-    }
-
-    private void updateTimer() {
-        if (timeRemaining > 0) {
-            timeRemaining--;
-        }
     
-        int secondsRemaining = timeRemaining / 60;
-        showText("Time to memorize: " + secondsRemaining + "s", 300, 50);  // Display remaining time
-    }
 }
