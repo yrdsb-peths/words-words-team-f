@@ -25,16 +25,21 @@ public class Button extends Actor {
     
     //check if user clicked on (this) obeject. 
     public void act() {
-        if (Greenfoot.mouseClicked(this)) {
+        if (Greenfoot.mouseClicked(this))
+        {
             selectSound.play();
-            if (action != null) {
+            if (action != null)
+            {
                 action.run();
             }
         }
         
-        if (Greenfoot.mouseMoved(this)) {
+        if (Greenfoot.mouseMoved(this))
+        {
             setImage(hoverImage); // Set hover image when mouse is over the button
-        } else if (Greenfoot.mouseMoved(null)) {
+        } 
+        else if (Greenfoot.mouseMoved(null))
+        {
             setImage(buttonImage); // Set normal image when mouse is not over the button
         }
         
