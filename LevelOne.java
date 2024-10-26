@@ -3,19 +3,57 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class LevelOne extends World
 {
-    private ArrayList<String> words;
+    private boolean gameStarted = false;
+    private boolean showingWords = true;
+    private boolean isInputEnabled = false;
+    private ArrayList<String> ingredients = new ArrayList<String>();
+    
     private PlayerInput playerInput;
+    
     public LevelOne()
-    {
-        super(600, 400, 1);
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         
-        int timeRemaining = 300; // 5 seconds (300 frames)
-        ArrayList<String> words = new ArrayList<>();
-        words.add("apple");
-        words.add("banana");
-        words.add("cherry");
+        super(600, 400, 1);         
         
-        PlayerInput playerInput = new PlayerInput(timeRemaining, words);
-        addObject(playerInput, 300, 350);
+        MusicManager.stopMusic();
+        
+        showText("this is level one", 300,200);
+        //setImage(image);
+        //setWords
+        ingredients.add("tomato");
+        ingredients.add("cucumber");
+        ingredients.add("carrot");
+        
+        setBackground(new GreenfootImage("map1bg.png")); 
+        
+        TextBox textBox = new TextBox();
+        TextBox textBoxTwo = new TextBox();
+        TextBox textBoxThree = new TextBox(); 
+        
+        addObject(textBox, 104, 206);
+        addObject(textBoxTwo, 307, 206);
+        addObject(textBoxThree, 503, 206);
+        
+        playerInput = new PlayerInput();
+        addObject(playerInput, 300, 350); 
     }
+    
+    public void act()
+    {
+        if(!gameStarted)
+        {
+            //loading screen
+            if (Greenfoot.isKeyDown("enter"))
+            {
+                showText("", 300, 200);  // Clear the intro text
+                gameStarted = true;
+                playerInput.showWords(); 
+            }
+        }
+
+       
+    }
+    
+    
 }
