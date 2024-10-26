@@ -1,11 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class TextBox here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class TextBox extends Actor
 {
     private GreenfootImage textBoxImgOne;
@@ -43,20 +38,19 @@ public class TextBox extends Actor
         }
         
         setImage(normalImage); 
-        
-        hoverImage = new GreenfootImage(normalImage); 
-        hoverImage.scale((int)(hoverImage.getWidth() + 20), (int)(hoverImage.getHeight() + 10));
+       
     }
     
-    public void act()
+    public void showText(String text)
     {
-        if (Greenfoot.mouseMoved(this)) 
-        {
-            setImage(hoverImage); // Set hover image when mouse is over the button
-        } 
-        else if (Greenfoot.mouseMoved(null)) 
-        {
-            setImage(normalImage); // Set normal image when mouse is not over the button
-        }
+        GreenfootImage img = new GreenfootImage(normalImage); 
+        GreenfootImage textImage = new GreenfootImage(text, 20, Color.BLACK, new Color(0, 0, 0, 0));
+        
+        int x = (img.getWidth() - textImage.getWidth()) / 2;
+        int y = (img.getHeight() - textImage.getHeight()) / 2;
+        
+        img.drawImage(textImage, x, y); 
+        setImage(img);
     }
+    
 }
