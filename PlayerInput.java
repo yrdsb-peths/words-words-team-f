@@ -4,108 +4,142 @@ import java.util.Arrays;
 
 public class PlayerInput extends Actor
 {
-    private ArrayList<String> possibleKeys;
-    private String userInput = "";
-    private boolean isInputEnabled = false;
-    private boolean showingWords = true;
-    private ArrayList<String> words;
-    private int timerSet = 200;
-
-    private int timeLimit = 200;
-    private int timeRemaining = timeLimit;
+    private ArrayList<String> wordsToMemorize;
+    private ArrayList<String> userInputs;
+    private boolean inputEnabled = false;
+    private int wordYPosition = 200; 
+    
+    private String currentWord = "";  // Store the current word the user is typing
+    private int currentWordIndex = 0;
+    
+    private World levelWorld;
     
     
-    public PlayerInput()
+    
+    public PlayerInput(ArrayList<String> words, World levelWorld)
     {
         setImage((GreenfootImage) null);
-        possibleKeys = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "space"));
-        words = new ArrayList<>(Arrays.asList("apple", "banana", "cherry", "orange", "grape"));
+        this.wordsToMemorize = words;
+        this.userInputs = new ArrayList<>();
+        this.levelWorld = levelWorld;
+        
+
+        // Initialize user input slots to empty strings
+        for (int i = 0; i < words.size(); i++) {
+            userInputs.add("");  // Create empty strings for user input
+        }
     }
     
     public void act()
     {
-        if(showingWords)
+        if (inputEnabled)
         {
-            if(timerSet > 0)
-            {
-                timerSet--; 
-            }
-            else
-            {
-                clearScreen(); 
-                showingWords = false; 
-                isInputEnabled = true;
-            }
+            handleUserTyping();
         }
-        else
-        {
-            if(isInputEnabled)
-            {
-                handleUserTyping();
-            }
-        }
-        
-        updateTimer(); 
     }
     
-    
+    public void enableInput()
+    {
+        inputEnabled = true;  // Enable user typing
+        showTextForInput();  // Display empty input fields at the beginning
+    }
     
     private void handleUserTyping()
     {
-        for(String key : possibleKeys)
+        String key = Greenfoot.getKey();
+        
+        if (key != null)
         {
-            if(Greenfoot.isKeyDown(key))
+            // If the input is space or enter, store the current word
+            if (key.equals("space") || key.equals("enter"))
             {
-                if(key.equals("space"))
+                for (int i = 0; i < userInputs.size(); i++)
                 {
-                    userInput += " ";
+                    if (userInputs.get(i).isEmpty())
+                    {
+                        userInputs.set(i, currentWord);
+                        currentWord = "";  // Reset current word
+                        showTextForInput();
+                        break;
+                    }
                 }
-                else
+                // Check if all words are entered
+                if (allWordsFilled())
                 {
-                    userInput += key;
+                    inputEnabled = false;  // Disable further input
+                    checkUserAnswers();
                 }
-                Greenfoot.delay(5);
             }
-            if (Greenfoot.isKeyDown("backspace") && userInput.length() > 0)
+            else if (key.equals("backspace") && currentWord.length() > 0)
             {
-                userInput = userInput.substring(0, userInput.length() - 1);
-                Greenfoot.delay(5);
+                currentWord = currentWord.substring(0, currentWord.length() - 1);
             }
-            if(Greenfoot.isKeyDown("enter"))
+            else if (key.length() == 1)
             {
-                userInput = ""; // reset after enter key press
-                Greenfoot.delay(5);
+                currentWord += key;
             }
             
-            World world = getWorld(); 
-            world.showText("Typed: " + userInput, 300, 350); 
+            showTextForInput(); 
         }
-         
     }
+    
+    private void showTextForInput()
+    {
+        // Display the user's inputs centered in the text boxes
+        World world = getWorld(); 
+        int screenWidth = world.getWidth(); 
+        int numWords = userInputs.size(); 
+        int spacing = screenWidth / (numWords + 1); 
         
-    private void clearScreen()
-    {
-        getWorld().showText("", 300, 200); 
+        //display words at specific positions
+        for(int i = 0; i < userInputs.size(); i++)
+        {
+            int xPosition = spacing * (i + 1); // even spacing
+            int yPosition = wordYPosition;  // vertical spacing
+            world.showText(userInputs.get(i), xPosition, yPosition);
+        }
+        
+         //display current word being typed
+        world.showText("Current Ingredient: " + currentWord, 300, wordYPosition + 110);
     }
     
-    
-    public void showWords()
+    private void checkUserAnswers()
     {
-        StringBuilder displayText = new StringBuilder("Memorize these words:\n");
-        for (String word : words)
+        World world = getWorld();
+        int correctAnswers = 0;
+    
+        // Loop through user inputs and check against the correct answers
+        for (int i = 0; i < userInputs.size(); i++)
         {
-            displayText.append(word).append(" ");
+            String input = userInputs.get(i);
+            String correctWord = wordsToMemorize.get(i);
+    
+            // Calculate the position to display "Correct" or "Incorrect" based on the current text box
+            int xPosition = (world.getWidth() / (userInputs.size() + 1)) * (i + 1);
+            int yPosition = wordYPosition + 30;  // Slightly below the current word
+    
+            // Display correct or incorrect for each word
+            if (correctWord.equals(input)) {
+                world.showText("(Correct)", xPosition, yPosition);
+                correctAnswers++;
+            } else {
+                world.showText("(Incorrect)", xPosition, yPosition);
+            }
         }
-        getWorld().showText(displayText.toString(), 300, 200);
+    
+        world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
     }
+
     
-    private void updateTimer()
+    private boolean allWordsFilled()
     {
-        if(timeRemaining > 0)
+        for (String input : userInputs)
         {
-            timeRemaining --; 
+            if (input.isEmpty())
+            {
+                return false; 
+            }
         }
-        int secondsRemaining = timeRemaining / 60;
-        getWorld().showText("Time to memorize: " + secondsRemaining + "s", 300, 50);
+        return true; 
     }
 }
