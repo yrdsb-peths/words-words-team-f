@@ -100,7 +100,7 @@ public class PlayerInput extends Actor
         }
         
          //display current word being typed
-        world.showText("Current Ingredient: " + currentWord, 300, wordYPosition + 110);
+        world.showText("(type here): " + currentWord, 300, wordYPosition + 110);
     }
     
     private void checkUserAnswers()
@@ -129,6 +129,7 @@ public class PlayerInput extends Actor
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
     }
+
 
     
     private boolean allWordsFilled()
