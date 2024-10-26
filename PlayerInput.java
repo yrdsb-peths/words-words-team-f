@@ -89,14 +89,15 @@ public class PlayerInput extends Actor
         World world = getWorld(); 
         int screenWidth = world.getWidth(); 
         int numWords = userInputs.size(); 
-        int spacing = screenWidth / (numWords + 1); 
-        
+        int spacing = screenWidth / (numWords - 1); 
+        double scaleFactor = 0.73; //reduce the spacing by this amount 
+        int adjustedSpacing = (int)(spacing * scaleFactor);
         //display words at specific positions
         for(int i = 0; i < userInputs.size(); i++)
         {
-            int xPosition = spacing * (i + 1); // even spacing
+            int xPosition =  adjustedSpacing * i; // even spacing along the width of screen
             int yPosition = wordYPosition;  // vertical spacing
-            world.showText(userInputs.get(i), xPosition, yPosition);
+            world.showText(userInputs.get(i), xPosition + 78, yPosition);
         }
         
          //display current word being typed
