@@ -64,9 +64,11 @@ public class LevelOne extends World
                 clearWords();
                 startInputPhase();
             }
+            addObject(new Button(this:: goLevelSelect, "levelOneButton.png", "levelOneButton.png"), getWidth(), getHeight());
+            
         }
 
-       
+        
     }
     
     private void showWords(ArrayList<String> words)
@@ -102,5 +104,30 @@ public class LevelOne extends World
         playerInput.enableInput();
     }
     
+    private void nextLevel()
+    {
+        //addObject(new Button(this:: goLevelSelect, "LevelOneButton.png", "LevelOneButton.png"), getWidth(), getHeight());
+    }
+    private void goLevelSelect()
+    {
+        Greenfoot.setWorld(new LevelSelect());
+    }
+
+    private void backMenu()
+    {
+        addObject(new Button(this:: goBackMenu, "LevelOneButton.png", "LevelOneButton.png"), getWidth(), getHeight());
+    }
+    private void goBackMenu()
+    {
+        Greenfoot.setWorld(new MenuScreen());
+    }
     
+    private void replay()
+    {
+        addObject(new Button(this:: goReplay, "LevelOneButton.png", "LevelOneButton.png"), getWidth(), getHeight());
+    }
+    private void goReplay()
+    {
+        Greenfoot.setWorld(new LevelOne());
+    }
 }
