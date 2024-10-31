@@ -13,11 +13,12 @@ public class LevelOne extends World
     private ArrayList<String> wordsToMemorize;
     private PlayerInput playerInput;
     private ArrayList<String> wordPool;  // Larger pool of words to choose from
-    
+    //
     // High score map
     private static Map<String, Integer> highScores = new HashMap<>();
     private int correctAnswers = 0;
     
+
         public LevelOne() {    
         super(600, 400, 1);         
     
@@ -64,9 +65,8 @@ public class LevelOne extends World
                 clearWords();
                 startInputPhase();
             }
+            
         }
-
-       
     }
     
     private void showWords(ArrayList<String> words)
@@ -101,6 +101,5 @@ public class LevelOne extends World
         showText("Fill the boxes with the ingredients that you remember\nORDER MATTERS!", 300, 100);
         playerInput.enableInput();
     }
-    
     
 }
