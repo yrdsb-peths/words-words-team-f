@@ -14,6 +14,8 @@ public class PlayerInput extends Actor
     
     private World levelWorld;
     
+    private boolean buttonCreated = false;
+    
     
     
     public PlayerInput(ArrayList<String> words, World levelWorld)
@@ -129,6 +131,8 @@ public class PlayerInput extends Actor
         }
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
+        getWorld().addObject(new Button(this:: goLevelSelect, "levelOneButton.png", "levelOneButton.png"), world.getWidth()/2, world.getHeight()/2); 
+        
     }
 
 
@@ -143,5 +147,33 @@ public class PlayerInput extends Actor
             }
         }
         return true; 
+    }
+    
+    private void nextLevel()
+    {
+        //buttons
+        //addObject(new Button(this:: goLevelSelect, "LevelOneButton.png", "LevelOneButton.png"), getWidth()/2, getHeight()/2);
+    }
+    private void goLevelSelect()
+    {
+        Greenfoot.setWorld(new LevelSelect());
+    }
+
+    private void backMenu()
+    {
+        //addObject(new Button(this:: goBackMenu, "LevelOneButton.png", "LevelOneButton.png"), getWidth(), getHeight());
+    }
+    private void goBackMenu()
+    {
+        Greenfoot.setWorld(new MenuScreen());
+    }
+    
+    private void replay()
+    {
+        //addObject(new Button(this:: goReplay, "LevelOneButton.png", "LevelOneButton.png"), getWidth(), getHeight());
+    }
+    private void goReplay()
+    {
+        Greenfoot.setWorld(new LevelOne());
     }
 }
