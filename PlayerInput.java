@@ -131,7 +131,7 @@ public class PlayerInput extends Actor
         }
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
-        getWorld().addObject(new Button(this:: goLevelSelect, "menu.png", "menu.png"), world.getWidth()/2, world.getHeight()/2); 
+        getWorld().addObject(new Button(this:: goBackMenu, "menu.png", "menu.png"), world.getWidth()/2 - 170, world.getHeight()/2 + 170); 
         
     }
 
