@@ -27,7 +27,7 @@ public class LevelTwo extends World
         super(600, 400, 1);         
     
         MusicManager.stopMusic();
-        setBackground(new GreenfootImage("map1bg.png"));
+        setBackground(new GreenfootImage("map2bg.png"));
         
         TextBox textBox = new TextBox();
         TextBox textBoxTwo = new TextBox();
