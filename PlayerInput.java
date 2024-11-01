@@ -131,11 +131,11 @@ public class PlayerInput extends Actor
         }
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
-        getWorld().addObject(new Button(this:: goLevelSelect, "menu.png", "menu.png"), world.getWidth()/2, world.getHeight()/2 + 170); 
+        getWorld().addObject(new Button(this:: goProceed, "proceed.png", "proceed.png"), world.getWidth()/2, world.getHeight()/2 + 170); 
         
     }
 
-
+    
     
     private boolean allWordsFilled()
     {
@@ -175,5 +175,10 @@ public class PlayerInput extends Actor
     private void goReplay()
     {
         Greenfoot.setWorld(new LevelOne());
+    }
+    
+    private void goProceed()
+    {
+        Greenfoot.setWorld(new ProceedWorld());
     }
 }

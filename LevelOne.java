@@ -33,7 +33,7 @@ public class LevelOne extends World
         addObject(textBoxTwo, 307, 206);
         addObject(textBoxThree, 503, 206);
     
-
+        //public vpo
         wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));
         
         Collections.shuffle(wordPool);  // Shuffle the word pool
