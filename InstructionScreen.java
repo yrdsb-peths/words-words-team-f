@@ -8,14 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class InstructionScreen extends World
 {
-    /**
-     * Constructor for objects of class InstructionScreen.
-     * 
-     */
+    
+    private String levelName;
+    
     public InstructionScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        this.levelName = levelName;
+        
+    }
+    public void act()
+    {
+        
+    }
+    public void showIntructions()
+    {
         
     }
 }
