@@ -78,19 +78,14 @@ public class InstructionScreen extends World
         addObject(startButton, getWidth() / 2, getHeight() - 50);
     }
     private void startLevel() {
-    switch (levelName) {
-        case "Level 1":
-            Greenfoot.setWorld(new LevelOne());
-            break;
-        case "Level 2":
-            Greenfoot.setWorld(new LevelTwo());
-            break;
-        case "Level 3":
-            Greenfoot.setWorld(new LevelThree());
-            break;
-        default:
-            // Optional: Handle unexpected cases
-            break;
+        switch (levelName) {
+            case "Level 1": Greenfoot.setWorld(new LevelOne());
+                break;
+            case "Level 2": Greenfoot.setWorld(new LevelTwo());
+                break;
+            case "Level 3": Greenfoot.setWorld(new LevelThree());
+                break;
+            default: break;
+        }
     }
-}
 }
