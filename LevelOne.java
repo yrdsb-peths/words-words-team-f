@@ -18,7 +18,7 @@ public class LevelOne extends World
     private static Map<String, Integer> highScores = new HashMap<>();
     private int correctAnswers = 0;
     
-        public LevelOne(InstructionScreen instructions) {    
+        public LevelOne() {    
         super(600, 400, 1);         
     
         MusicManager.stopMusic();

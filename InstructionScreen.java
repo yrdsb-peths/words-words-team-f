@@ -22,6 +22,7 @@ public class InstructionScreen extends World
         this.levelName = currentLevel;
         background = new GreenfootImage("InstructionScreen.png");
         showInstructions();
+        addStartButton();
     }
     public void act()
     {
@@ -73,22 +74,23 @@ public class InstructionScreen extends World
     }
     private void addStartButton()
     {
-        Button startButton = new Button(() -> startLevel(), "startButton.png", "startButton.png");
+        Button startButton = new Button(this::startLevel, "LetsCook.png", "LetsCook.png");
         addObject(startButton, getWidth() / 2, getHeight() - 50);
     }
-    private void startLevel()
-    {
-        switch (levelName)
-        {
-            case "Level 1":
-                Greenfoot.setWorld(new LevelOne(this));
-                break;
-            case "Level 2":
-                Greenfoot.setWorld(new LevelTwo());
-                break;
-            case "Level 3":
-                Greenfoot.setWorld(new LevelThree());
-                break;
-        }
+    private void startLevel() {
+    switch (levelName) {
+        case "Level 1":
+            Greenfoot.setWorld(new LevelOne());
+            break;
+        case "Level 2":
+            Greenfoot.setWorld(new LevelTwo());
+            break;
+        case "Level 3":
+            Greenfoot.setWorld(new LevelThree());
+            break;
+        default:
+            // Optional: Handle unexpected cases
+            break;
     }
+}
 }
