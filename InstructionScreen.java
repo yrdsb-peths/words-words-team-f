@@ -17,8 +17,6 @@ public class InstructionScreen extends World
         super(600, 400, 1);
         this.levelName = levelName;
         setBackground(new GreenfootImage("InstructionScreen.jpg"));
-        showInstructions();
-        addStartButton();
     }
     public void showInstructions()
     {
