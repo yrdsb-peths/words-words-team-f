@@ -29,9 +29,9 @@ public class LevelTwo extends World
         MusicManager.stopMusic();
         setBackground(new GreenfootImage("map1bg.png"));
         
-        TextBox textBox = new TextBox();
-        TextBox textBoxTwo = new TextBox();
-        TextBox textBoxThree = new TextBox(); 
+        TextBox textBox = new TextBox(wordsToMemorize.get(0));
+        TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1));
+        TextBox textBoxThree = new TextBox(wordsToMemorize.get(2)); 
     
         addObject(textBox, 104, 206);
         addObject(textBoxTwo, 307, 206);

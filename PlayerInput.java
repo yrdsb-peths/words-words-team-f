@@ -21,7 +21,6 @@ public class PlayerInput extends Actor
         this.userInputs = new ArrayList<>();
         this.levelWorld = levelWorld;
         
-
         // Initialize user input slots to empty strings
         for (int i = 0; i < words.size(); i++) {
             userInputs.add("");  // Create empty strings for user input
@@ -128,8 +127,6 @@ public class PlayerInput extends Actor
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
     }
-
-
     
     private boolean allWordsFilled()
     {
@@ -142,4 +139,5 @@ public class PlayerInput extends Actor
         }
         return true; 
     }
+    
 }
