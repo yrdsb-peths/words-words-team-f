@@ -61,7 +61,7 @@ public class InstructionScreen extends World
         switch(levelName)
         {
             case "Level 1":
-                instructions = "Level 1:\nMemorize the displayed words.\nAfter the timer ends, input the words in the correct order.";
+                instructions = "Level 1:\nMemorize the displayed words.\nAfter the timer ends,\ninput the words in the correct order.";
                 break;
             case "Level 2":
                 instructions = "Level 2:\nMore words to memorize and less time!\nInput the words in the correct order after memorization.";
@@ -75,7 +75,7 @@ public class InstructionScreen extends World
     private void addStartButton()
     {
         Button startButton = new Button(this::startLevel, "LetsCook.png", "LetsCook.png");
-        addObject(startButton, getWidth() / 2, getHeight() - 50);
+        addObject(startButton, getWidth() / 2, getHeight() - 100);
     }
     private void startLevel() {
         switch (levelName) {
