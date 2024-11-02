@@ -14,8 +14,6 @@ public class PlayerInput extends Actor
     
     private World levelWorld;
     
-    
-    
     public PlayerInput(ArrayList<String> words, World levelWorld)
     {
         setImage((GreenfootImage) null);
