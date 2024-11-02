@@ -61,13 +61,13 @@ public class InstructionScreen extends World
         switch(levelName)
         {
             case "Level 1":
-                instructions = "Level 1: Memorize the displayed words.\nAfter the timer ends, input the words in the correct order.";
+                instructions = "Level 1:\nMemorize the displayed words.\nAfter the timer ends, input the words in the correct order.";
                 break;
             case "Level 2":
-                instructions = "Level 2: More words to memorize and less time!\nInput the words in the correct order after memorization.";
+                instructions = "Level 2:\nMore words to memorize and less time!\nInput the words in the correct order after memorization.";
                 break;
             case "Level 3":
-                instructions = "Level 3: Challenge mode! Be quick and precise.\nMemorize the words and type them in order correctly.";
+                instructions = "Level 3:\nChallenge mode! Be quick and precise.\nMemorize the words and type them in order correctly.";
                 break;
         }
         showText(instructions, getWidth() / 2, getHeight() / 2);
