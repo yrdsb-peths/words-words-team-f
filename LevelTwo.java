@@ -32,9 +32,12 @@ public class LevelTwo extends World
         TextBox textBox = new TextBox(wordsToMemorize.get(0));
         TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1));
         TextBox textBoxThree = new TextBox(wordsToMemorize.get(2)); 
+        TextBox textBoxFour = new TextBox(wordsToMemorize.get(3));
+        TextBox textBoxFive = new TextBox(wordsToMemorize.get(4));
     
         addObject(textBox, 104, 206);
         addObject(textBoxTwo, 307, 206);
+        addObject(textBoxThree, 503, 206);
         addObject(textBoxThree, 503, 206);
     
 
