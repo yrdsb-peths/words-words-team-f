@@ -13,17 +13,29 @@ public class LevelOne extends World
     private ArrayList<String> wordsToMemorize;
     private PlayerInput playerInput;
     private ArrayList<String> wordPool;  // Larger pool of words to choose from
-    
+    //
     // High score map
     private static Map<String, Integer> highScores = new HashMap<>();
     private int correctAnswers = 0;
     
+
         public LevelOne() {    
         super(600, 400, 1);         
     
         MusicManager.stopMusic();
         setBackground(new GreenfootImage("map1bg.png"));
-        
+        Level-Scarlett
+        TextBox textBox = new TextBox();
+        TextBox textBoxTwo = new TextBox();
+        TextBox textBoxThree = new TextBox(); 
+    
+        addObject(textBox, 104, 206);
+        addObject(textBoxTwo, 307, 206);
+        addObject(textBoxThree, 503, 206);
+    
+        //public vpo
+        wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));
+        main
         
         wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));
         
@@ -61,9 +73,8 @@ public class LevelOne extends World
                 clearWords();
                 startInputPhase();
             }
+            
         }
-
-       
     }
     
     private void showWords(ArrayList<String> words)

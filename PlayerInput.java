@@ -13,7 +13,11 @@ public class PlayerInput extends Actor
     private int currentWordIndex = 0;
     
     private World levelWorld;
+    Level-Scarlett
+    private boolean buttonCreated = false;
     
+    
+    main
     public PlayerInput(ArrayList<String> words, World levelWorld)
     {
         setImage((GreenfootImage) null);
@@ -126,7 +130,12 @@ public class PlayerInput extends Actor
         }
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
+        getWorld().addObject(new Button(this:: goProceed, "proceed.png", "proceed.png"), world.getWidth()/2, world.getHeight()/2 + 170); 
+        
     }
+    Level-Scarlett
+
+    main
     
     private boolean allWordsFilled()
     {
@@ -139,5 +148,39 @@ public class PlayerInput extends Actor
         }
         return true; 
     }
-    
+    Level-Scarlett
 }
+    private void nextLevel()
+    {
+        //buttons
+        //addObject(new Button(this:: goLevelSelect, "LevelOneButton.png", "LevelOneButton.png"), getWidth()/2, getHeight()/2);
+    }
+    private void goLevelSelect()
+    {
+        Greenfoot.setWorld(new LevelSelect());
+    }
+
+    private void backMenu()
+    {
+        //addObject(new Button(this:: goBackMenu, "LevelOneButton.png", "LevelOneButton.png"), getWidth(), getHeight());
+    }
+    private void goBackMenu()
+    {
+        Greenfoot.setWorld(new MenuScreen());
+    }
+    
+    private void replay()
+    {
+        //addObject(new Button(this:: goReplay, "LevelOneButton.png", "LevelOneButton.png"), getWidth(), getHeight());
+    }
+    private void goReplay()
+    {
+        Greenfoot.setWorld(new LevelOne());
+    }
+    
+    private void goProceed()
+    {
+        Greenfoot.setWorld(new ProceedWorld());
+    }
+}
+main
