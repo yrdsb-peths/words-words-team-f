@@ -8,16 +8,17 @@ public class TextBox extends Actor
     private GreenfootImage textBoxImgThree;
     
     private GreenfootImage normalImage; 
-    private GreenfootImage hoverImage;
     
-    public TextBox()
+    private String word;
+    public TextBox(String words)
     {
         textBoxImgOne = new GreenfootImage("textBoxOne.png"); 
         textBoxImgTwo = new GreenfootImage("textBoxTwo.png");
         textBoxImgThree = new GreenfootImage("textBoxThree.png");
         
-        setRandomImage(); 
+        word = words;
         
+        setRandomImage();
     }
     
     private void setRandomImage()
@@ -52,5 +53,4 @@ public class TextBox extends Actor
         img.drawImage(textImage, x, y); 
         setImage(img);
     }
-    
 }
