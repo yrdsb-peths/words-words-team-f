@@ -3,7 +3,7 @@ import greenfoot.GreenfootImage;
 
 public class ProceedWorld extends World
 {
-    private GreenfootImage background;
+    private GreenfootImage background2;
     private int scrollX;
     private int scrollY; 
     private int scrollZ;
@@ -11,8 +11,8 @@ public class ProceedWorld extends World
     public ProceedWorld()
     {
         super(600,400,1);
-        background = new GreenfootImage("cyabStripeBg.png");
-        //starting point for background hover
+        background2 = new GreenfootImage("cyabStripeBg.png");
+        //starting point for background2 hover
         scrollX = 0;
         scrollY = 0;
         scrollZ = 0;
@@ -51,20 +51,20 @@ public class ProceedWorld extends World
             counter = 0; 
         }
         
-        GreenfootImage scrolledImage = new GreenfootImage(getWidth(), getHeight());
+        GreenfootImage scrolledImage2 = new GreenfootImage(getWidth(), getHeight());
         
-        int imageWidth = background.getWidth();
-        int imageHeight = background.getHeight();
+        int imageWidth = background2.getWidth();
+        int imageHeight = background2.getHeight();
         
         int x = scrollX % imageWidth; 
         int y = scrollY % imageHeight; 
         
-        scrolledImage. drawImage(background, -x, -y);
-        scrolledImage.drawImage(background, -x + imageWidth, -y); 
-        scrolledImage.drawImage(background, -x, -y + imageHeight); 
-        scrolledImage.drawImage(background, -x + imageWidth, -y + imageHeight);
-        
-        //set the background to the scrolled image
-        setBackground(scrolledImage);
+        scrolledImage2. drawImage(background2, -x, -y);
+        scrolledImage2.drawImage(background2, -x + imageWidth, -y); 
+        scrolledImage2.drawImage(background2, -x, -y + imageHeight); 
+        scrolledImage2.drawImage(background2, -x + imageWidth, -y + imageHeight);
+    
+        //set the background2 to the scrolled image
+        setBackground(scrolledImage2);
     }
 }
