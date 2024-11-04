@@ -4,12 +4,7 @@ import java.util.Collections;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-/**
- * Write a description of class LevelTwo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class LevelTwo extends World
 {
     private boolean gameStarted = false;
@@ -18,33 +13,34 @@ public class LevelTwo extends World
     private ArrayList<String> wordsToMemorize;
     private PlayerInput playerInput;
     private ArrayList<String> wordPool;  // Larger pool of words to choose from
-    
+    //
     // High score map
     private static Map<String, Integer> highScores = new HashMap<>();
     private int correctAnswers = 0;
     
-        public LevelTwo() {    
+
+    public LevelTwo() {    
         super(600, 400, 1);         
     
         MusicManager.stopMusic();
         setBackground(new GreenfootImage("map1bg.png"));
-        
-        TextBox textBox = new TextBox();
-        TextBox textBoxTwo = new TextBox();
-        TextBox textBoxThree = new TextBox(); 
-    
-        addObject(textBox, 104, 206);
-        addObject(textBoxTwo, 307, 206);
-        addObject(textBoxThree, 503, 206);
-    
 
+        //public vpo
         wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));
+        Collections.shuffle(wordPool);  // Shuffle the word pool  
+        wordsToMemorize = new ArrayList<>(wordPool.subList(0, 5));
+    
+        TextBox textBox = new TextBox(wordsToMemorize.get(0));
+        TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1));
+        TextBox textBoxThree = new TextBox(wordsToMemorize.get(2)); 
+        TextBox textBoxFour = new TextBox(wordsToMemorize.get(3)); 
+        TextBox textBoxFive = new TextBox(wordsToMemorize.get(4)); 
         
-        Collections.shuffle(wordPool);  // Shuffle the word pool
-        
-        // Select the first 3 random words for the current level
-        wordsToMemorize = new ArrayList<>(wordPool.subList(0, 3));
-        
+        addObject(textBox, 104, 165);
+        addObject(textBoxTwo, 307, 165);
+        addObject(textBoxThree, 503, 165);
+        addObject(textBoxFour, 210, 310);
+        addObject(textBoxFive, 410, 310);
       
         playerInput = new PlayerInput(wordsToMemorize, this);
         addObject(playerInput, 300, 350);
@@ -69,7 +65,8 @@ public class LevelTwo extends World
                 clearWords();
                 startInputPhase();
             }
-        }       
+            
+        }
     }
     
     private void showWords(ArrayList<String> words)
@@ -89,6 +86,8 @@ public class LevelTwo extends World
         TextBox textBox = (TextBox)getObjects(TextBox.class).get(0);
         TextBox textBoxTwo = (TextBox)getObjects(TextBox.class).get(1);
         TextBox textBoxThree = (TextBox)getObjects(TextBox.class).get(2);
+        TextBox textBoxFour = (TextBox)getObjects(TextBox.class).get(3);
+        TextBox textBoxFive = (TextBox)getObjects(TextBox.class).get(4);
         
         textBox.showText("");  // Clear the text in the first box
         textBoxTwo.showText("");  // Clear the text in the second box
@@ -102,5 +101,6 @@ public class LevelTwo extends World
     {
         showText("Fill the boxes with the ingredients that you remember\nORDER MATTERS!", 300, 100);
         playerInput.enableInput();
-    }    
+    }
+    
 }

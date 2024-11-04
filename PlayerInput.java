@@ -13,10 +13,7 @@ public class PlayerInput extends Actor
     private int currentWordIndex = 0;
     
     private World levelWorld;
-    
     private boolean buttonCreated = false;
-    
-    
     
     public PlayerInput(ArrayList<String> words, World levelWorld)
     {
@@ -25,7 +22,6 @@ public class PlayerInput extends Actor
         this.userInputs = new ArrayList<>();
         this.levelWorld = levelWorld;
         
-
         // Initialize user input slots to empty strings
         for (int i = 0; i < words.size(); i++) {
             userInputs.add("");  // Create empty strings for user input
@@ -146,7 +142,7 @@ public class PlayerInput extends Actor
         }
         return true; 
     }
-    
+
     private void goProceed()
     {
         Greenfoot.setWorld(new ProceedWorld());
