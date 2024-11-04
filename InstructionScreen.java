@@ -60,15 +60,17 @@ public class InstructionScreen extends World
         String instructions = "";
         if (levelName.equals("Level 1"))
         {
-            instructions = "Level 1:\nMemorize the displayed words.\nAfter the timer ends,\ninput the words in the correct order.";
+            LevelOneTitle = new GreenfootImage(".png");
+            addObject(LevelOneTitle, getWidth()
+            instructions = "\nMemorize the displayed words.\nAfter the timer ends,\ninput the words in the correct order.";
         } 
         else if (levelName.equals("Level 2"))
         {
-            instructions = "Level 2:\nMore words to memorize and less time!\nInput the words in the correct order after memorization.";
+            instructions = "\nMore words to memorize and less time!\nInput the words in the correct order after memorization.";
         } 
         else if (levelName.equals("Level 3"))
         {
-            instructions = "Level 3:\nChallenge mode! Be quick and precise.\nMemorize the words and type them in order correctly.";
+            instructions = "\nChallenge mode! Be quick and precise.\nMemorize the words and type them in order correctly.";
         }
         showText(instructions, getWidth() / 2, getHeight() / 2);
     }
