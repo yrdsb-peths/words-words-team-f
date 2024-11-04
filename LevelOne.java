@@ -34,9 +34,9 @@ public class LevelOne extends World
         Collections.shuffle(wordPool);  // Shuffle the word pool  
         wordsToMemorize = new ArrayList<>(wordPool.subList(0, 3));
     
-        TextBox textBox = new TextBox(wordsToMemorize.get(0));
-        TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1));
-        TextBox textBoxThree = new TextBox(wordsToMemorize.get(2)); 
+        TextBox textBox = new TextBox(wordsToMemorize.get(0), 220, 150);
+        TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1), 220, 150);
+        TextBox textBoxThree = new TextBox(wordsToMemorize.get(2),220, 150); 
         
         addObject(textBox, 104, 206);
         addObject(textBoxTwo, 307, 206);
