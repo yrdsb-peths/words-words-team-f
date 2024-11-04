@@ -7,7 +7,7 @@ public class ProceedText extends Actor
     public ProceedText()
     {
         proceedText = new GreenfootImage("proceedFrom.png");
-        proceedText.scale(proceedText.getWidth()/3, proceedText.getHeight()/3); 
+        proceedText.scale(proceedText.getWidth()*2, proceedText.getHeight()*2); 
         setImage(proceedText); 
     }
 
