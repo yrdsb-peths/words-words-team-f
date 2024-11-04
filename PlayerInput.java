@@ -13,11 +13,8 @@ public class PlayerInput extends Actor
     private int currentWordIndex = 0;
     
     private World levelWorld;
-    Level-Scarlett
     private boolean buttonCreated = false;
     
-    
-    main
     public PlayerInput(ArrayList<String> words, World levelWorld)
     {
         setImage((GreenfootImage) null);
@@ -133,10 +130,7 @@ public class PlayerInput extends Actor
         getWorld().addObject(new Button(this:: goProceed, "proceed.png", "proceed.png"), world.getWidth()/2, world.getHeight()/2 + 170); 
         
     }
-    Level-Scarlett
 
-    main
-    
     private boolean allWordsFilled()
     {
         for (String input : userInputs)
@@ -148,8 +142,6 @@ public class PlayerInput extends Actor
         }
         return true; 
     }
-    Level-Scarlett
-}
     private void nextLevel()
     {
         //buttons
@@ -183,4 +175,3 @@ public class PlayerInput extends Actor
         Greenfoot.setWorld(new ProceedWorld());
     }
 }
-main
