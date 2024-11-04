@@ -22,7 +22,7 @@ public class LevelThree extends World
     public LevelThree() {    
         super(600, 400, 1);         
     
-        MusicManager.stopMusic();
+        MusicManager.stopBgMusic();
         setBackground(new GreenfootImage("map1bg.png"));
 
         //public vpo

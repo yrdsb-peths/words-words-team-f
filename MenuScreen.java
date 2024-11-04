@@ -76,13 +76,13 @@ public class MenuScreen extends World
     
     public void started()
     {
-        MusicManager.playMusic(); 
+        MusicManager.playBgMusic(); 
     }
     
     
     public void stopped()
     {
-        MusicManager.pauseMusic(); 
+        MusicManager.pauseBgMusic(); 
     }
     
     
