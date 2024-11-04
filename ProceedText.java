@@ -6,9 +6,9 @@ public class ProceedText extends Actor
     
     public ProceedText()
     {
-        proceedText = new GreenfootImage("Each-level-has-a-unique-map-10-23-2024.png");
-        levelTitleText.scale(levelTitleText.getWidth()/3, levelTitleText.getHeight()/3); 
-        setImage(levelTitleText); 
+        proceedText = new GreenfootImage("proceedFrom.png");
+        proceedText.scale(proceedText.getWidth()/3, proceedText.getHeight()/3); 
+        setImage(proceedText); 
     }
 
     

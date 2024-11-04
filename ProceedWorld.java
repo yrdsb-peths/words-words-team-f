@@ -19,7 +19,7 @@ public class ProceedWorld extends World
         addObject(new Button(this:: goBackMenu, "menu.png", "menu.png"), getWidth()/2, getHeight()/2 + 60);
         //addObject(new Button(this:: goReplay, "LevelOneButton.png", "LevelOneButton.png"), getWidth()/2, getHeight()/2 + 120);
         
-        proceedHere here = new proceedHere();
+        ProceedText here = new ProceedText();
         addObject(here, 300, 130);
     }
     
