@@ -37,17 +37,17 @@ public class LevelTwo extends World
         Collections.shuffle(wordPool);  // Shuffle the word pool  
         wordsToMemorize = new ArrayList<>(wordPool.subList(0, 5));
     
-        TextBox textBox = new TextBox(wordsToMemorize.get(0));
-        TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1));
-        TextBox textBoxThree = new TextBox(wordsToMemorize.get(2)); 
-        TextBox textBoxFour = new TextBox(wordsToMemorize.get(3)); 
-        TextBox textBoxFive = new TextBox(wordsToMemorize.get(4)); 
+        TextBox textBox = new TextBox(wordsToMemorize.get(0), 110, 150);
+        TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1), 110, 150);
+        TextBox textBoxThree = new TextBox(wordsToMemorize.get(2), 110, 150); 
+        TextBox textBoxFour = new TextBox(wordsToMemorize.get(3), 110, 150); 
+        TextBox textBoxFive = new TextBox(wordsToMemorize.get(4), 110, 150); 
         
-        addObject(textBox, 104, 165);
-        addObject(textBoxTwo, 307, 165);
-        addObject(textBoxThree, 503, 165);
-        addObject(textBoxFour, 210, 310);
-        addObject(textBoxFive, 410, 310);
+        addObject(textBox, 104, 221);
+        addObject(textBoxTwo, 307, 221);
+        addObject(textBoxThree, 503, 221);
+        addObject(textBoxFour, 210, 221);
+        addObject(textBoxFive, 410, 221);
       
         playerInput = new PlayerInput(wordsToMemorize, this);
         addObject(playerInput, 300, 350);
