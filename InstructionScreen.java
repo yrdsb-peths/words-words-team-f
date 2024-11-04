@@ -58,17 +58,12 @@ public class InstructionScreen extends World
     public void showInstructions()
     {
         String instructions = "";
-        switch(levelName)
-        {
-            case "Level 1":
-                instructions = "Level 1:\nMemorize the displayed words.\nAfter the timer ends,\ninput the words in the correct order.";
-                break;
-            case "Level 2":
-                instructions = "Level 2:\nMore words to memorize and less time!\nInput the words in the correct order after memorization.";
-                break;
-            case "Level 3":
-                instructions = "Level 3:\nChallenge mode! Be quick and precise.\nMemorize the words and type them in order correctly.";
-                break;
+        if (levelName.equals("Level 1")) {
+            instructions = "Level 1:\nMemorize the displayed words.\nAfter the timer ends,\ninput the words in the correct order.";
+        } else if (levelName.equals("Level 2")) {
+            instructions = "Level 2:\nMore words to memorize and less time!\nInput the words in the correct order after memorization.";
+        } else if (levelName.equals("Level 3")) {
+            instructions = "Level 3:\nChallenge mode! Be quick and precise.\nMemorize the words and type them in order correctly.";
         }
         showText(instructions, getWidth() / 2, getHeight() / 2);
     }
@@ -78,14 +73,12 @@ public class InstructionScreen extends World
         addObject(startButton, getWidth() / 2, getHeight() - 100);
     }
     private void startLevel() {
-        switch (levelName) {
-            case "Level 1": Greenfoot.setWorld(new LevelOne());
-                break;
-            case "Level 2": Greenfoot.setWorld(new LevelTwo());
-                break;
-            case "Level 3": Greenfoot.setWorld(new LevelThree());
-                break;
-            default: break;
+        if (levelName.equals("Level 1")) {
+            Greenfoot.setWorld(new LevelOne());
+        } else if (levelName.equals("Level 2")) {
+            Greenfoot.setWorld(new LevelTwo());
+        } else {
+            Greenfoot.setWorld(new LevelThree());
         }
     }
 }
