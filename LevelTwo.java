@@ -102,11 +102,16 @@ public class LevelTwo extends World
         TextBox textBox = (TextBox)getObjects(TextBox.class).get(0);
         TextBox textBoxTwo = (TextBox)getObjects(TextBox.class).get(1);
         TextBox textBoxThree = (TextBox)getObjects(TextBox.class).get(2);
+        TextBox textBoxFour = (TextBox)getObjects(TextBox.class).get(3);
+        TextBox textBoxFive = (TextBox)getObjects(TextBox.class).get(4);
         
         textBox.showText(words.get(0)); 
         textBoxTwo.showText(words.get(1));
         textBoxThree.showText(words.get(2));
+        textBoxFour.showText(words.get(3));
+        textBoxFive.showText(words.get(4));
     }
+
     
     private void clearWords()
     {
@@ -120,6 +125,8 @@ public class LevelTwo extends World
         textBox.showText("");  // Clear the text in the first box
         textBoxTwo.showText("");  // Clear the text in the second box
         textBoxThree.showText("");  // Clear the text in the third box
+        textBoxFour.showText("");  // Clear the text in the fourth box
+        textBoxFive.showText(""); //Clear the text in the fifth box
         
         // Clear the timer and other text on the screen
         showText("", 300, 50);  // Clear the timer
