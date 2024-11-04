@@ -12,7 +12,6 @@ public class InstructionScreen extends World
     private GreenfootImage background;
     
     private int scrollX;
-    private int scrollY;
     private int counter;
     
     public InstructionScreen(String currentLevel)
@@ -60,16 +59,17 @@ public class InstructionScreen extends World
         String instructions = "";
         if (levelName.equals("Level 1"))
         {
-            LevelOneTitle = new GreenfootImage(".png");
-            addObject(LevelOneTitle, getWidth()
+            addObject(new LevelOneTwoThree(), 300, 200);
             instructions = "\nMemorize the displayed words.\nAfter the timer ends,\ninput the words in the correct order.";
         } 
         else if (levelName.equals("Level 2"))
         {
+            addObject(new LevelOneTwoThree(), 300, 200);
             instructions = "\nMore words to memorize and less time!\nInput the words in the correct order after memorization.";
         } 
         else if (levelName.equals("Level 3"))
         {
+            addObject(new LevelOneTwoThree(), 300, 200); 
             instructions = "\nChallenge mode! Be quick and precise.\nMemorize the words and type them in order correctly.";
         }
         showText(instructions, getWidth() / 2, getHeight() / 2);
