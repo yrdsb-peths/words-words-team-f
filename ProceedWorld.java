@@ -3,19 +3,15 @@ import greenfoot.GreenfootImage;
 
 public class ProceedWorld extends World
 {
-    private GreenfootImage background2;
+    private GreenfootImage background;
     private int scrollX;
-    private int scrollY; 
-    private int scrollZ;
     private int counter;
     public ProceedWorld()
     {
         super(600,400,1);
-        background2 = new GreenfootImage("cyabStripeBg.png");
+        background = new GreenfootImage("cyabStripeBg.png");
         //starting point for background2 hover
         scrollX = 0;
-        scrollY = 0;
-        scrollZ = 0;
         
         //buttons for all functions
         addObject(new Button(this:: goLevelSelect, "levelSelect.png", "levelSelect.png"), getWidth()/2, getHeight()/2);
@@ -25,9 +21,34 @@ public class ProceedWorld extends World
     
     public void act()
     {
-        scrollBackGround();
+        scrollBackground();
     }
-    private void goLevelSelect()
+    private void scrollBackground()
+    {
+        counter++; // increase the counter
+
+        //update scroll position every 5 frames
+        if(counter >= 5)
+        {
+            scrollX += 1;   //scroll speed
+            counter = 0; 
+        }
+
+        GreenfootImage scrolledImage = new GreenfootImage(getWidth(), getHeight());
+
+        int imageWidth = background.getWidth();
+        int imageHeight = background.getHeight();
+
+        int x = scrollX % imageWidth; 
+        //drawing the image twice to cover the empty areas during scrolling animation
+        scrolledImage. drawImage(background, -x, 0);
+        scrolledImage.drawImage(background, -x + imageWidth, 0); 
+        scrolledImage.drawImage(background, -x, 0); 
+        scrolledImage.drawImage(background, -x + imageWidth, 0);
+
+        //set the background to the scrolled image
+        setBackground(scrolledImage); 
+    }private void goLevelSelect()
     {
         Greenfoot.setWorld(new LevelSelect());
     }
@@ -39,32 +60,6 @@ public class ProceedWorld extends World
     {
         //Greenfoot.setWorld(new LevelOne());
     }
+
     
-    private void scrollBackGround()
-    {
-        counter++; // increase the counter
-        
-        if(counter >= 5)
-        {
-            scrollX += 1;
-            scrollY += 1;  
-            counter = 0; 
-        }
-        
-        GreenfootImage scrolledImage2 = new GreenfootImage(getWidth(), getHeight());
-        
-        int imageWidth = background2.getWidth();
-        int imageHeight = background2.getHeight();
-        
-        int x = scrollX % imageWidth; 
-        int y = scrollY % imageHeight; 
-        
-        scrolledImage2. drawImage(background2, -x, -y);
-        scrolledImage2.drawImage(background2, -x + imageWidth, -y); 
-        scrolledImage2.drawImage(background2, -x, -y + imageHeight); 
-        scrolledImage2.drawImage(background2, -x + imageWidth, -y + imageHeight);
-    
-        //set the background2 to the scrolled image
-        setBackground(scrolledImage2);
-    }
 }
