@@ -10,6 +10,10 @@ public class ProceedWorld extends World
     public ProceedWorld()
     {
         super(600,400,1);
+        
+        MusicManager.stopKitchenMus();
+        MusicManager.stopPirateMus(); 
+        
         background = new GreenfootImage("cyabStripeBg.png");
         //starting point for background2 hover
         scrollX = 0;
@@ -27,6 +31,7 @@ public class ProceedWorld extends World
     {
         scrollBackground();
     }
+    
     private void scrollBackground()
     {
         counter++; // increase the counter
@@ -52,14 +57,21 @@ public class ProceedWorld extends World
 
         //set the background to the scrolled image
         setBackground(scrolledImage); 
-    }private void goLevelSelect()
+    }
+    
+    
+    private void goLevelSelect()
     {
+        MusicManager.playBgMusic();
         Greenfoot.setWorld(new LevelSelect());
     }
+    
     private void goBackMenu()
     {
+        MusicManager.playBgMusic();
         Greenfoot.setWorld(new MenuScreen());
     }
+    
     private void goReplay()
     {
         //Greenfoot.setWorld(new LevelOne());

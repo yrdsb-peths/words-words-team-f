@@ -12,6 +12,7 @@ public class LevelOne extends World
     private boolean gameStarted = false;
     private boolean memorizationPhase = true;
     private int memorizationTime = 420; // 7 seconds (7 * 60 FPS)
+   
     
     private ArrayList<String> wordsToMemorize;
     private PlayerInput playerInput;
@@ -25,7 +26,10 @@ public class LevelOne extends World
         public LevelOne() {    
         super(600, 400, 1);         
     
-        MusicManager.stopMusic();
+        MusicManager.stopBgMusic();
+        MusicManager.playKitchenMus();
+        
+        
         setBackground(new GreenfootImage("map1bg.png"));
         
         wordPool = new ArrayList<>();

@@ -25,9 +25,12 @@ public class LevelTwo extends World
     private int correctAnswers = 0;
 
     public LevelTwo() {    
-        super(600, 400, 1);         
-    
-        MusicManager.stopMusic();
+        super(600, 400, 1);     
+        
+        //music stop and start 
+        MusicManager.stopBgMusic();
+        MusicManager.playPirateMus();
+        
         setBackground(new GreenfootImage("map2bg.png"));
 
         //public vpo
