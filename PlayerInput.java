@@ -159,6 +159,7 @@ public class PlayerInput extends Actor
         Greenfoot.setWorld(new LevelOne());
     }
     
+
     private void goProceed()
     {
         Greenfoot.setWorld(new ProceedWorld());
