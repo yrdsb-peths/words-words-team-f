@@ -24,24 +24,15 @@ public class LevelOne extends World
     
         MusicManager.stopMusic();
         setBackground(new GreenfootImage("map1bg.png"));
-        
-        TextBox textBox = new TextBox();
-        TextBox textBoxTwo = new TextBox();
-        TextBox textBoxThree = new TextBox(); 
-        
-        addObject(textBox, 104, 206);
-        addObject(textBoxTwo, 307, 206);
-        addObject(textBoxThree, 503, 206);
-    
+
         //public vpo
         wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));
-
         Collections.shuffle(wordPool);  // Shuffle the word pool  
         wordsToMemorize = new ArrayList<>(wordPool.subList(0, 3));
     
-        textBox = new TextBox(wordsToMemorize.get(0));
-        textBoxTwo = new TextBox(wordsToMemorize.get(1));
-        textBoxThree = new TextBox(wordsToMemorize.get(2)); 
+        TextBox textBox = new TextBox(wordsToMemorize.get(0));
+        TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1));
+        TextBox textBoxThree = new TextBox(wordsToMemorize.get(2)); 
         
         addObject(textBox, 104, 206);
         addObject(textBoxTwo, 307, 206);
