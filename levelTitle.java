@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class levelTitle extends Actor
+public class LevelTitle extends Actor
 {
     private GreenfootImage levelTitleText;
     
-    public levelTitle()
+    public LevelTitle()
     {
         levelTitleText = new GreenfootImage("Each-level-has-a-unique-map-10-23-2024.png");
         levelTitleText.scale(levelTitleText.getWidth()/3, levelTitleText.getHeight()/3); 

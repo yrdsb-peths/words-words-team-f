@@ -25,7 +25,6 @@ public class LevelOne extends World
         MusicManager.stopMusic();
         setBackground(new GreenfootImage("map1bg.png"));
 
-        //public vpo
         wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));
         Collections.shuffle(wordPool);  // Shuffle the word pool  
         wordsToMemorize = new ArrayList<>(wordPool.subList(0, 3));

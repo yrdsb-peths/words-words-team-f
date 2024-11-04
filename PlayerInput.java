@@ -1,6 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.Scanner;
+
+//levelOneList
+
 
 public class PlayerInput extends Actor
 {
@@ -142,29 +148,12 @@ public class PlayerInput extends Actor
         }
         return true; 
     }
-    private void nextLevel()
-    {
-        //buttons
-        //addObject(new Button(this:: goLevelSelect, "LevelOneButton.png", "LevelOneButton.png"), getWidth()/2, getHeight()/2);
-    }
-    private void goLevelSelect()
-    {
-        Greenfoot.setWorld(new LevelSelect());
-    }
-
-    private void backMenu()
-    {
-        //addObject(new Button(this:: goBackMenu, "LevelOneButton.png", "LevelOneButton.png"), getWidth(), getHeight());
-    }
+    
     private void goBackMenu()
     {
         Greenfoot.setWorld(new MenuScreen());
     }
-    
-    private void replay()
-    {
-        //addObject(new Button(this:: goReplay, "LevelOneButton.png", "LevelOneButton.png"), getWidth(), getHeight());
-    }
+
     private void goReplay()
     {
         Greenfoot.setWorld(new LevelOne());
