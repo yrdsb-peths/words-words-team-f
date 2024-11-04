@@ -24,10 +24,12 @@ public class InstructionScreen extends World
         showInstructions();
         addStartButton();
     }
+    
     public void act()
     {
         scrollBackground();
     }
+    
     private void scrollBackground()
     {
         counter++; // increase the counter
@@ -55,6 +57,7 @@ public class InstructionScreen extends World
         //set the background to the scrolled image
         setBackground(scrolledImage); 
     }
+    
     public void showInstructions()
     {
         String instructions = "";
@@ -72,13 +75,17 @@ public class InstructionScreen extends World
         }
         showText(instructions, getWidth() / 2, getHeight() / 2);
     }
+    
     private void addStartButton()
     {
         Button startButton = new Button(this::startLevel, "LetsCook.png", "LetsCook.png");
         addObject(startButton, getWidth() / 2, getHeight() - 100);
     }
-    private void startLevel() {
-        switch (levelName) {
+    
+    private void startLevel()
+    {
+        switch (levelName)
+        {
             case "Level 1": Greenfoot.setWorld(new LevelOne());
                 break;
             case "Level 2": Greenfoot.setWorld(new LevelTwo());
