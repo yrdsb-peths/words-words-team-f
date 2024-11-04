@@ -23,7 +23,7 @@ public class LevelTwo extends World
         super(600, 400, 1);         
     
         MusicManager.stopMusic();
-        setBackground(new GreenfootImage("map1bg.png"));
+        setBackground(new GreenfootImage("map2bg.png"));
 
         //public vpo
         wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));

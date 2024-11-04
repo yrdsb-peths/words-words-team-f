@@ -1,15 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class LevelOne extends World
 {
     private boolean gameStarted = false;
     private boolean memorizationPhase = true;
     private int memorizationTime = 420; // 7 seconds (7 * 60 FPS)
+    
     private ArrayList<String> wordsToMemorize;
     private PlayerInput playerInput;
     private ArrayList<String> wordPool;  // Larger pool of words to choose from
@@ -24,9 +27,10 @@ public class LevelOne extends World
     
         MusicManager.stopMusic();
         setBackground(new GreenfootImage("map1bg.png"));
-
-        //public vpo
-        wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));
+        
+        wordPool = new ArrayList<>();
+        loadWordsFromFile("levelOneList.txt");         
+        
         Collections.shuffle(wordPool);  // Shuffle the word pool  
         wordsToMemorize = new ArrayList<>(wordPool.subList(0, 3));
     
@@ -64,6 +68,29 @@ public class LevelOne extends World
             
         }
     }
+    
+    
+    
+    private void loadWordsFromFile(String filename)
+    {
+        try{
+            Scanner scan = new Scanner(new File(filename));
+            while(scan.hasNextLine())
+            {
+                String word = scan.nextLine();
+                if(!word.isEmpty())
+                {
+                    wordPool.add(word); 
+                }
+            }
+            scan.close();
+        }
+        catch(FileNotFoundException e)
+        {
+            System.out.println("File not found: " + filename); 
+        }
+    }
+    
     
     private void showWords(ArrayList<String> words)
     {
