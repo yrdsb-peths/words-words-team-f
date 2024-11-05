@@ -20,7 +20,7 @@ public class LevelTwo extends World
     
     
     // High score map
-    private static Map<String, Integer> highScores = new HashMap<>();
+    
     private int correctAnswers = 0;
 
     public LevelTwo() {    
