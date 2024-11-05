@@ -13,7 +13,7 @@ Level 2: Pirate ship
 Level 3: Space ship
 
 [Map]
-2. We also used `Map` to 
+2. The `Map` data structure was used 
 
 # Additional information (Features)
 1. Music Manager 
