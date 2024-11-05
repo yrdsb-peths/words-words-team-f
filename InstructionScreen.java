@@ -60,17 +60,17 @@ public class InstructionScreen extends World
         if (levelName.equals("Level 1"))
         {
             addObject(new LevelOneTwoThree(), 300, 200);
-            instructions = "\nMemorize the displayed words.\nAfter the timer ends,\ninput the words in the correct order.";
+            instructions = "You've started a resteruant, the customers are waiting...";
         } 
         else if (levelName.equals("Level 2"))
         {
             addObject(new LevelOneTwoThree(), 300, 200);
-            instructions = "\nMore words to memorize and less time!\nInput the words in the correct order after memorization.";
+            instructions = "pirates have taken you captive,\ncreate a meal to satisfy their hunger!";
         } 
         else if (levelName.equals("Level 3"))
         {
             addObject(new LevelOneTwoThree(), 300, 200); 
-            instructions = "\nChallenge mode! Be quick and precise.\nMemorize the words and type them in order correctly.";
+            instructions = "Humans have migrated to the moon,\ncreate out of the world meals to celebrate!";
         }
         showText(instructions, getWidth() / 2, getHeight() / 2);
     }

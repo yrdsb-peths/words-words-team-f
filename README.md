@@ -7,17 +7,17 @@
 # Data Structures used and summary of its purpose.
 
 [List]
-1. We used the `List` data structure to create a `WordList`, this segment of code can be found in the `WordList` Actor class. It includes an arrayList and are seperated into three parts to match the three differnt levels. The differnt levels will be listed in the following: 
+1. We used the `List` data structure to create a `WordList`, this segment of code can be found in the `WordList` Actor class. It includes an arrayList and are seperated into three parts to match the three different levels. The different levels will be listed in the following: 
 Level 1: Kitchen setting
 Level 2: Pirate ship
-Level 3: Space ship
+Level 3: Spaceship
 
 [Map]
-2. The `Map` data structure was used 
+2. The `Map` data structure was used to create a tracker that tracks the levels the player has cleared so far. The code can be found in 
 
 # Additional information (Features)
 1. Music Manager 
-- The `MusicManager` is a seperate class that 
+- The `MusicManager` is a separate class that 
 - dwa
 2. Randomized textbox colors
 
