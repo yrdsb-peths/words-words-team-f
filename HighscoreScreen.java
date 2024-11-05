@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class HighscoreScreen extends World
 {
-
+    private GreenfootImage backGround;
     /**
      * Constructor for objects of class HighscoreScreen.
      * 
