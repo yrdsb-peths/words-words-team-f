@@ -7,7 +7,7 @@ public class ProceedWorld extends World
     private GreenfootImage proceedText;
     private int scrollX;
     private int counter;
-    public static GreenfootSound proceedBg = new GreenfootSound("Full Moon Full Life (Instrumental).mp3");
+    public static GreenfootSound proceedBg = new GreenfootSound("Color Your Night (Instrumental).mp3");
 
     
     public ProceedWorld()
