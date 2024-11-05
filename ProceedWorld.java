@@ -73,7 +73,8 @@ public class ProceedWorld extends World
         MusicManager.playBgMusic();
         Greenfoot.setWorld(new MenuScreen());
     }
-
+    
+    private void goNextLevel()
     {
         LevelManager.nextLevel();
         World nextLevel = LevelManager.getCurrentLevel();
