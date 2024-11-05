@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class PlayerInput extends Actor
 {
     private ArrayList<String> wordsToMemorize;
@@ -25,6 +24,8 @@ public class PlayerInput extends Actor
     private int fadeOpacity = 255;
     private int levelFailOpacity = 255;
     
+    private GreenfootSound clearSound = new GreenfootSound("Level Up Sound Effect.mp3");
+    private GreenfootSound failSound = new GreenfootSound("The Family Feud Buzzer Sound Effect.mp3");
     
     
     public PlayerInput(ArrayList<String> words, World levelWorld)
@@ -186,8 +187,10 @@ public class PlayerInput extends Actor
         
         if(correctAnswers >= passThreshold && levelClearActor == null)
         {
+            //add to hashmap 
             HighScoreManager.addHighScore("globalHighScore", 1); 
             
+            clearSound.play(); 
     
             GreenfootImage levelClearText = new GreenfootImage("levelClearText.png");
             levelClearText.scale(400, 38);
@@ -200,6 +203,8 @@ public class PlayerInput extends Actor
         }
         else if (correctAnswers < passThreshold && levelFailActor == null)// if half the answers are wrong it is considered a fail
         {
+            failSound.play(); 
+            
             GreenfootImage levelFailText = new GreenfootImage("levelFailed.png");
             levelFailText.scale(400, 38);
             levelFailText.setTransparency(levelFailOpacity);
