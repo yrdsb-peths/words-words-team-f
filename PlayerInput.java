@@ -236,17 +236,7 @@ public class PlayerInput extends Actor
         }
         return true; 
     }
-    
-    private void goBackMenu()
-    {
-        Greenfoot.setWorld(new MenuScreen());
-    }
 
-    private void goReplay()
-    {
-        Greenfoot.setWorld(new LevelOne());
-    }
-    
 
     private void goProceed()
     {
