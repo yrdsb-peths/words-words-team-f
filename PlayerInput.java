@@ -140,22 +140,41 @@ public class PlayerInput extends Actor
     
     private void showTextForInput()
     {
-        // Display the user's inputs centered in the text boxes
-        World world = getWorld(); 
-        int screenWidth = world.getWidth(); 
-        int numWords = userInputs.size(); 
-        int spacing = screenWidth / (numWords - 1); 
-        double scaleFactor = 0.73; //reduce the spacing by this amount 
-        int adjustedSpacing = (int)(spacing * scaleFactor);
-        
-        //display words at specific positions
-        for(int i = 0; i < userInputs.size(); i++)
+        World world = getWorld();
+        int numWords = userInputs.size();
+    
+        // Adjustments for level 3
+        if (levelName.equals("Level 3"))
         {
-            int xPosition =  adjustedSpacing * i; // even spacing along the width of screen
-            int yPosition = wordYPosition;  // vertical spacing
-            world.showText(userInputs.get(i), xPosition + 78, yPosition);
+            int startXPosition = 45; // Starting X position for Level 3
+            int spacing = 85; // Adjusted spacing for Level 3
+
+            // Display words at specific positions for level 3
+            for (int i = 0; i < numWords; i++)
+            {
+                int xPosition = startXPosition + (spacing * i);
+                int yPosition = wordYPosition;  // Vertical position for words
+                world.showText(userInputs.get(i), xPosition, yPosition);
+            }
         }
-        
+        else
+        {
+            // Default settings for levels 1 and 2
+            int screenWidth = world.getWidth();
+            int spacing = screenWidth / (numWords - 1);
+            double scaleFactor = 0.73; // Adjust the scale if needed
+    
+            int adjustedSpacing = (int)(spacing * scaleFactor);
+    
+            // Display words at specific positions for levels 1 and 2
+            for (int i = 0; i < numWords; i++)
+            {
+                int xPosition = adjustedSpacing * i; // Even spacing along the width of the screen
+                int yPosition = wordYPosition;  // Vertical spacing
+                world.showText(userInputs.get(i), xPosition + 78, yPosition);
+            }
+        }
+    
         if (!allWordsFilled())
         {
             world.showText("(type here): " + currentWord, 300, wordYPosition + 110);
