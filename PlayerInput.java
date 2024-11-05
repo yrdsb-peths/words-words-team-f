@@ -25,7 +25,7 @@ public class PlayerInput extends Actor
     private int levelFailOpacity = 255;
     
     private GreenfootSound clearSound = new GreenfootSound("Level Up Sound Effect.mp3");
-    private GreenfootSound failSound = new GreenfootSound("The Family Feud Buzzer Sound Effect.mp3");
+    private GreenfootSound failSound = new GreenfootSound("wrongsfx.mp3");
     
     
     public PlayerInput(ArrayList<String> words, World levelWorld)
@@ -188,7 +188,7 @@ public class PlayerInput extends Actor
         if(correctAnswers >= passThreshold && levelClearActor == null)
         {
             //add to hashmap 
-            HighScoreManager.addHighScore("globalHighScore", 1); 
+            HighScoreManager.addHighScore("Level One", 1);
             
             clearSound.play(); 
     
