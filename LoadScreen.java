@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class InstructionScreen extends World
+public class LoadScreen extends World
 {
     private String levelName;
     private GreenfootImage background;
@@ -14,7 +14,7 @@ public class InstructionScreen extends World
     private int scrollX;
     private int counter;
     
-    public InstructionScreen(String currentLevel)
+    public LoadScreen(String currentLevel)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
@@ -60,7 +60,9 @@ public class InstructionScreen extends World
         if (levelName.equals("Level 1"))
         {
             addObject(new LevelOneTitle(), 300, 130);
-            instructions = "You've started a resturant, \nthe customers are waiting...";
+
+            instructions = "You've started a restaurant, the customers are waiting...";
+
         } 
         else if (levelName.equals("Level 2"))
         {
