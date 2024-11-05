@@ -5,8 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
-//levelOneList
-
 
 public class PlayerInput extends Actor
 {
@@ -21,6 +19,9 @@ public class PlayerInput extends Actor
     private World levelWorld;
     private boolean buttonCreated = false;
     
+    private Actor levelClearActor = null;
+    private int fadeOpacity = 255;
+    
     public PlayerInput(ArrayList<String> words, World levelWorld)
     {
         setImage((GreenfootImage) null);
@@ -32,6 +33,8 @@ public class PlayerInput extends Actor
         for (int i = 0; i < words.size(); i++) {
             userInputs.add("");  // Create empty strings for user input
         }
+        
+        
     }
     
     public void act()
@@ -39,6 +42,24 @@ public class PlayerInput extends Actor
         if (inputEnabled)
         {
             handleUserTyping();
+        }
+        
+        if(levelClearActor!= null && fadeOpacity > 0)
+        {
+            fadeOpacity -= 1;
+            
+            if(fadeOpacity < 0)
+            {
+                fadeOpacity = 0; 
+            }
+            
+            levelClearActor.getImage().setTransparency(fadeOpacity);
+            
+            if(fadeOpacity == 0)
+            {
+                levelWorld.removeObject(levelClearActor); 
+                levelClearActor = null;
+            }
         }
     }
     
@@ -141,9 +162,19 @@ public class PlayerInput extends Actor
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
         
-        if(correctAnswers == wordsToMemorize.size())
+        if(correctAnswers == wordsToMemorize.size() && levelClearActor == null)
         {
             HighScoreManager.addHighScore("globalHighScore", 1); 
+            
+    
+            GreenfootImage levelClearText = new GreenfootImage("levelClearText.png");
+            levelClearText.scale(400, 38);
+            levelClearText.setTransparency(fadeOpacity);
+            
+            levelClearActor = new LevelClearActor(levelClearText);
+            
+            world.addObject(levelClearActor, world.getWidth() / 2, world.getHeight() / 2);
+
         }
         
         getWorld().addObject(new Button(this:: goProceed, "proceed.png", "proceed.png"), world.getWidth()/2, world.getHeight()/2 + 170); 
