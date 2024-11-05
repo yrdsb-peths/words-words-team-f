@@ -32,7 +32,9 @@ public class HighscoreScreen extends World
     {
         Map<String, Integer> highScores = HighScoreManager.getAllHighScores();
         
-        int yPosition = 250; 
+        int yPositionLevel1 = 150;
+        int yPositionLevel2 = 200;
+        int yPositionLevel3 = 250;
         
         if(highScores.isEmpty())
         {
@@ -55,14 +57,22 @@ public class HighscoreScreen extends World
                 noHighScoresText = null;
             }
             
-            for(Map.Entry<String, Integer> entry : highScores.entrySet())
+            if (highScores.containsKey("Level 1"))
             {
-                String levelName = entry.getKey(); 
-                int clearCount = entry.getValue();
-                                
-                showText(levelName + ": " + clearCount + " clears", getWidth() / 2, yPosition);
-                
-                yPosition += 30;
+                int clearCount = highScores.get("Level 1");
+                showText("Level 1: " + clearCount + " clears", getWidth() / 2, yPositionLevel1);
+            }
+            
+            if (highScores.containsKey("Level 2"))
+            {
+                int clearCount = highScores.get("Level 2");
+                showText("Level 2: " + clearCount + " clears", getWidth() / 2, yPositionLevel2);
+            }
+            
+            if (highScores.containsKey("Level 3"))
+            {
+                int clearCount = highScores.get("Level 3");
+                showText("Level 3: " + clearCount + " clears", getWidth() / 2, yPositionLevel3);
             }
             
         }
