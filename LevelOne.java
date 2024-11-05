@@ -79,7 +79,6 @@ public class LevelOne extends World
     }
     
     
-    
     private void loadWordsFromFile(String filename)
     {
         try{

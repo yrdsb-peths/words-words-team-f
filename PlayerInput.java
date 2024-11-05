@@ -25,7 +25,7 @@ public class PlayerInput extends Actor
     private int levelFailOpacity = 255;
     
     private GreenfootSound clearSound = new GreenfootSound("Level Up Sound Effect.mp3");
-    private GreenfootSound failSound = new GreenfootSound("The Family Feud Buzzer Sound Effect.mp3");
+    private GreenfootSound failSound = new GreenfootSound("wrongsfx.mp3");
     
     
     public PlayerInput(ArrayList<String> words, World levelWorld)
@@ -72,8 +72,14 @@ public class PlayerInput extends Actor
         if(levelFailActor != null && levelFailOpacity > 0)
         {
             levelFailOpacity -= 1;
-            if(levelFailOpacity < 0) levelFailOpacity = 0;
+            
+            if(levelFailOpacity < 0)
+            {
+                levelFailOpacity = 0;
+            }
+            
             levelFailActor.getImage().setTransparency(levelFailOpacity);
+            
             if(levelFailOpacity == 0)
             {
                 levelWorld.removeObject(levelFailActor);
@@ -161,7 +167,7 @@ public class PlayerInput extends Actor
     {
         World world = getWorld();
         int correctAnswers = 0;
-    
+        
         // Loop through user inputs and check against the correct answers
         for (int i = 0; i < userInputs.size(); i++)
         {
@@ -173,11 +179,15 @@ public class PlayerInput extends Actor
             int yPosition = wordYPosition + 30;  // Slightly below the current word
     
             // Display correct or incorrect for each word
-            if (correctWord.equals(input)) {
+            if (correctWord.equals(input))
+            {
                 world.showText("(YES)", xPosition, yPosition);
                 correctAnswers++;
-            } else {
+            } 
+            else
+            {
                 world.showText("(NO)", xPosition, yPosition);
+                
             }
         }
     
@@ -188,7 +198,7 @@ public class PlayerInput extends Actor
         if(correctAnswers >= passThreshold && levelClearActor == null)
         {
             //add to hashmap 
-            HighScoreManager.addHighScore("globalHighScore", 1); 
+            HighScoreManager.addHighScore("Clear Amounts", 1);
             
             clearSound.play(); 
     

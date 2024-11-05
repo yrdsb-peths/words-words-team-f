@@ -12,7 +12,7 @@ public class LevelTwo extends World
 {
     private boolean gameStarted = false;
     private boolean memorizationPhase = true;
-    private int memorizationTime = 420; // 7 seconds (7 * 60 FPS)
+    private int memorizationTime = 600; // 10 seconds (10 * 60 FPS)
     
     private ArrayList<String> wordsToMemorize;
     private PlayerInput playerInput;
@@ -46,11 +46,12 @@ public class LevelTwo extends World
         TextBox textBoxFour = new TextBox(wordsToMemorize.get(3), 110, 150); 
         TextBox textBoxFive = new TextBox(wordsToMemorize.get(4), 110, 150); 
         
+        
         addObject(textBox, 104, 221);
-        addObject(textBoxTwo, 307, 221);
-        addObject(textBoxThree, 503, 221);
-        addObject(textBoxFour, 210, 221);
-        addObject(textBoxFive, 410, 221);
+        addObject(textBoxTwo, 210, 221);
+        addObject(textBoxThree, 307, 221);
+        addObject(textBoxFour, 410, 221);
+        addObject(textBoxFive, 503, 221);
       
         playerInput = new PlayerInput(wordsToMemorize, this);
         addObject(playerInput, 300, 350);
