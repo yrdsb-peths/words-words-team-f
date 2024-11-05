@@ -1,0 +1,8 @@
+tomato
+cucumber
+carrot
+egg
+flour
+milk
+love
+sugar

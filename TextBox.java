@@ -10,7 +10,8 @@ public class TextBox extends Actor
     private GreenfootImage normalImage; 
     
     private String word;
-    public TextBox(String words)
+    
+    public TextBox(String words, int width, int height)
     {
         textBoxImgOne = new GreenfootImage("textBoxOne.png"); 
         textBoxImgTwo = new GreenfootImage("textBoxTwo.png");
@@ -18,10 +19,11 @@ public class TextBox extends Actor
         
         word = words;
         
-        setRandomImage();
+        setRandomImage(width, height);
+        
     }
     
-    private void setRandomImage()
+    private void setRandomImage(int width, int height)
     {
         int random = Greenfoot.getRandomNumber(3);
         
@@ -38,6 +40,7 @@ public class TextBox extends Actor
             normalImage = textBoxImgThree;
         }
         
+        normalImage.scale(width, height);
         setImage(normalImage); 
        
     }

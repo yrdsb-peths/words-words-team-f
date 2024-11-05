@@ -5,8 +5,97 @@ import greenfoot.GreenfootSound;
 public class MusicManager  
 {
     public static GreenfootSound bgMusic = new GreenfootSound("Pokemon ORAS Soundtrack - Flight to Space (128kbps).mp3");
+    public static GreenfootSound bgPirateMusic = new GreenfootSound("Pirate Encounter - Pokémon Clover Soundtrack (128kbps).mp3");
+    public static GreenfootSound bgLevelOne = new GreenfootSound("[YT2mp3.info] - Overcooked - Main Menu SONG (320kbps).mp3"); 
+    public static GreenfootSound bgLevelThree = new GreenfootSound("Rainbow Road - Mario Kart 8 Deluxe OST.mp3");
     
-    public static void playMusic()
+    
+    //methods for level 3 music
+    public static void playLevelThreeMus()
+    {
+        if(!bgLevelThree.isPlaying())
+        {
+            bgLevelThree.playLoop();
+            bgLevelThree.setVolume(40); 
+        }
+    }
+    
+    public static void stopLevelThreeMus()
+    {
+        if(bgLevelThree.isPlaying())
+        {
+            bgLevelThree.pause(); 
+        }
+    }
+    
+    public static void pauseLevelThreeMus()
+    {
+        if(bgLevelThree.isPlaying())
+        {
+            bgLevelThree.pause(); 
+        }
+    }
+    
+    
+    
+    //methods for level 1 music
+    public static void playKitchenMus()
+    {
+        if(!bgLevelOne.isPlaying())
+        {
+            bgLevelOne.playLoop();
+            bgLevelOne.setVolume(40); 
+        }
+    }
+    
+    public static void stopKitchenMus()
+    {
+        if(bgLevelOne.isPlaying())
+        {
+            bgLevelOne.pause(); 
+        }
+    }
+    
+    public static void pauseKitchenMus()
+    {
+        if(bgLevelOne.isPlaying())
+        {
+            bgLevelOne.pause(); 
+        }
+    }
+    
+    
+    
+    //methods for level 2 music
+    
+    public static void playPirateMus()
+    {
+        if(!bgPirateMusic.isPlaying())
+        {
+            bgPirateMusic.playLoop();
+            bgPirateMusic.setVolume(40);
+        }
+    }
+    
+    
+    public static void stopPirateMus()
+    {
+        if(bgPirateMusic.isPlaying())
+        {
+            bgPirateMusic.pause();
+        }
+    }
+    
+    public static void pausePirateMus()
+    {
+        if(bgPirateMusic.isPlaying())
+        {
+            bgPirateMusic.pause();
+        }
+    }
+    
+    
+    public static void playBgMusic()
     {
         if(!bgMusic.isPlaying())
         {
@@ -15,7 +104,7 @@ public class MusicManager
         }
     }
     
-    public static void stopMusic()
+    public static void stopBgMusic()
     {
         if(bgMusic.isPlaying())
         {
@@ -23,7 +112,7 @@ public class MusicManager
         }
     }
     
-    public static void pauseMusic()
+    public static void pauseBgMusic()
     {
         if(bgMusic.isPlaying())
         {
