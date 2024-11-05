@@ -19,6 +19,7 @@ public class InstructionWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         background = new GreenfootImage("InstructionScreen.png");
+        showInstructions();
     }
     public void act()
     {
@@ -50,5 +51,10 @@ public class InstructionWorld extends World
         
         //set the background to the scrolled image
         setBackground(scrolledImage); 
+    }
+    public void showInstructions()
+    {
+        String instructions = "You've started a resteruant, \nthe customers are waiting...";
+        showText(instructions, getWidth() / 2, getHeight() / 2);
     }
 }
