@@ -5,7 +5,7 @@ import greenfoot.GreenfootSound;
 public class MusicManager  
 {
     public static GreenfootSound bgMusic = new GreenfootSound("Pokemon ORAS Soundtrack - Flight to Space (128kbps).mp3");
-    public static GreenfootSound bgPirateMusic = new GreenfootSound("Pirate Encounter - Pokémon Clover Soundtrack (128kbps).mp3");
+    public static GreenfootSound bgPirateMusic = new GreenfootSound("Pirate Encounter - PokÃ©mon Clover Soundtrack (128kbps).mp3");
     public static GreenfootSound bgLevelOne = new GreenfootSound("[YT2mp3.info] - Overcooked - Main Menu SONG (320kbps).mp3"); 
     public static GreenfootSound bgLevelThree = new GreenfootSound("Rainbow Road - Mario Kart 8 Deluxe OST.mp3");
     
