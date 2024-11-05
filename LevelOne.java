@@ -128,4 +128,9 @@ public class LevelOne extends World
         playerInput.enableInput();
     }
     
+    private void levelComplete()
+    {
+        //Finished game, transition to ProceedWorld
+        Greenfoot.setWorld(new ProceedWorld());
+    }
 }
