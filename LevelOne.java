@@ -99,6 +99,7 @@ public class LevelOne extends World
     
     private void levelComplete()
     {
+        //Finished game, transition to ProceedWorld
         Greenfoot.setWorld(new ProceedWorld());
     }
 }
