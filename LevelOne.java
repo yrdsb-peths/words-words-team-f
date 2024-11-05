@@ -97,4 +97,8 @@ public class LevelOne extends World
         playerInput.enableInput();
     }
     
+    private void levelComplete()
+    {
+        Greenfoot.setWorld(new ProceedWorld());
+    }
 }
