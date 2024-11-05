@@ -7,6 +7,9 @@ public class ProceedWorld extends World
     private GreenfootImage proceedText;
     private int scrollX;
     private int counter;
+    public static GreenfootSound proceedBg = new GreenfootSound("Color Your Night (Instrumental).mp3");
+
+    
     public ProceedWorld()
     {
         super(600,400,1);
@@ -14,6 +17,11 @@ public class ProceedWorld extends World
         MusicManager.stopKitchenMus();
         MusicManager.stopPirateMus(); 
         MusicManager.stopLevelThreeMus(); 
+        
+        
+        proceedBg.stop();
+        proceedBg.playLoop(); 
+
         
         background = new GreenfootImage("cyabStripeBg.png");
         //starting point for background2 hover
@@ -65,12 +73,14 @@ public class ProceedWorld extends World
     
     private void goLevelSelect()
     {
+        proceedBg.stop();
         MusicManager.playBgMusic();
         Greenfoot.setWorld(new LevelSelect());
     }
     
     private void goBackMenu()
     {
+        proceedBg.stop();
         MusicManager.playBgMusic();
         Greenfoot.setWorld(new MenuScreen());
     }
