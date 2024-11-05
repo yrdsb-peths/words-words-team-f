@@ -37,6 +37,15 @@ public class MusicManager
     }
     
     
+    public static void restartLevelThreeMus()
+    {
+        bgLevelThree.stop();
+        bgLevelThree.playLoop();
+        bgLevelThree.setVolume(40);
+    }
+    
+    
+    
     
     //methods for level 1 music
     public static void playKitchenMus()
@@ -64,6 +73,13 @@ public class MusicManager
         }
     }
     
+    
+    public static void restartKitchenMus()
+    {
+        bgLevelOne.stop();
+        bgLevelOne.playLoop();
+        bgLevelOne.setVolume(40);
+    }
     
     
     //methods for level 2 music
@@ -95,6 +111,16 @@ public class MusicManager
     }
     
     
+    public static void restartPirateMus()
+    {
+        bgPirateMusic.stop();
+        bgPirateMusic.playLoop();
+        bgPirateMusic.setVolume(40);
+    }
+    
+    
+    //methods for menu bg music
+    
     public static void playBgMusic()
     {
         if(!bgMusic.isPlaying())
@@ -119,4 +145,12 @@ public class MusicManager
             bgMusic.pause(); 
         }
     }
+    
+    public static void restartBgMusic()
+    {
+        bgMusic.stop();
+        bgMusic.playLoop();
+        bgMusic.setVolume(40);
+    }
+    
 }
