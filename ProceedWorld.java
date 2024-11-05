@@ -22,7 +22,6 @@ public class ProceedWorld extends World
         proceedBg.stop();
         proceedBg.playLoop(); 
 
-        
         background = new GreenfootImage("cyabStripeBg.png");
         //starting point for background2 hover
         scrollX = 0;

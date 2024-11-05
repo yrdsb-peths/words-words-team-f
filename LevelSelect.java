@@ -88,17 +88,17 @@ public class LevelSelect extends World
     
     private void goLevelOne()
     {
-        Greenfoot.setWorld(new InstructionScreen("Level 1"));
+        Greenfoot.setWorld(new LoadScreen("Level 1"));
     }
     
     private void goLevelTwo()
     {
-        Greenfoot.setWorld(new InstructionScreen("Level 2")); 
+        Greenfoot.setWorld(new LoadScreen("Level 2")); 
     }
     
     private void goLevelThree()
     {
-        Greenfoot.setWorld(new InstructionScreen("Level 3"));
+        Greenfoot.setWorld(new LoadScreen("Level 3"));
     }
     
     private void goMenu()

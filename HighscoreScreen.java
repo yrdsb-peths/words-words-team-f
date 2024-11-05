@@ -9,11 +9,11 @@ import java.util.Map;
  */
 public class HighscoreScreen extends World
 {
+    
     private GreenfootImage background;
-    /**
-     * Constructor for objects of class HighscoreScreen.
-     * 
-     */
+    private Actor noHighScoresText;
+    
+    
     public HighscoreScreen()
     {    
         
@@ -23,7 +23,9 @@ public class HighscoreScreen extends World
         setBackground(background);
         
         addObject(new Button(this::goLevelSelect, "small button_.png","small button_.png"), 35,45);
-
+        
+        
+        
     }
     
     private void displayHighScores()
@@ -31,16 +33,38 @@ public class HighscoreScreen extends World
         Map<String, Integer> highScores = HighScoreManager.getAllHighScores();
         
         int yPosition = 100; 
-        for(Map.Entry<String, Integer> entry : highScores.entrySet())
-        {
-            String levelName = entry.getKey(); 
-            int clearCount = entry.getValue();
-            
-            
-            showText(levelName + ": " + clearCount + " clears", getWidth() / 2, getHeight()/2);
-            yPosition += 30;
-        }
         
+        if(highScores.isEmpty())
+        {
+            noHighScoresText = new Actor()
+            {
+                {
+                    GreenfootImage image = new GreenfootImage("No highscores... clear some levels and check again!", 36, Color.BLACK, new Color(0, 0, 0, 0));
+                    image.scale((int)(image.getWidth()/2), (int)(image.getHeight()/2));
+                    setImage(image);
+                }
+            };
+            
+            addObject(noHighScoresText, getWidth()/2, getHeight()/2); 
+        }
+        else
+        {
+            if(noHighScoresText != null)
+            {
+                removeObject(noHighScoresText);
+                noHighScoresText = null;
+            }
+            
+            for(Map.Entry<String, Integer> entry : highScores.entrySet())
+            {
+                String levelName = entry.getKey(); 
+                int clearCount = entry.getValue();
+                                
+                showText(levelName + ": " + clearCount + " clears", getWidth() / 2, getHeight()/2);
+                
+            }
+            
+        }
         
     }
     
