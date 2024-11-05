@@ -27,9 +27,12 @@ public class PlayerInput extends Actor
     private GreenfootSound clearSound = new GreenfootSound("Level Up Sound Effect.mp3");
     private GreenfootSound failSound = new GreenfootSound("wrongsfx.mp3");
     
+    private String levelName;
     
-    public PlayerInput(ArrayList<String> words, World levelWorld)
+    public PlayerInput(String levelName, ArrayList<String> words, World levelWorld)
     {
+        this.levelName = levelName; 
+        
         setImage((GreenfootImage) null);
         this.wordsToMemorize = words;
         this.userInputs = new ArrayList<>();
@@ -198,7 +201,7 @@ public class PlayerInput extends Actor
         if(correctAnswers >= passThreshold && levelClearActor == null)
         {
             //add to hashmap 
-            HighScoreManager.addHighScore("Clear Amounts", 1);
+            HighScoreManager.addHighScore(levelName, 1);
             
             clearSound.play(); 
     

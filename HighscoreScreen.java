@@ -32,7 +32,7 @@ public class HighscoreScreen extends World
     {
         Map<String, Integer> highScores = HighScoreManager.getAllHighScores();
         
-        int yPosition = 100; 
+        int yPosition = 250; 
         
         if(highScores.isEmpty())
         {
@@ -60,8 +60,9 @@ public class HighscoreScreen extends World
                 String levelName = entry.getKey(); 
                 int clearCount = entry.getValue();
                                 
-                showText(levelName + ": " + clearCount + " clears", getWidth() / 2, getHeight()/2);
+                showText(levelName + ": " + clearCount + " clears", getWidth() / 2, yPosition);
                 
+                yPosition += 30;
             }
             
         }
