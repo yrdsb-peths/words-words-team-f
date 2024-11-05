@@ -33,7 +33,7 @@ public class LevelSelect extends World
         addObject(new Button(this::goLevelTwo, "levelbutton2.png", "levelbutton2.png"), getWidth()/2, getHeight()/2 + 60); 
         addObject(new Button(this::goLevelThree, "levelbutton3.png", "levelbutton3.png"), getWidth()/2, getHeight()/2 + 120);
         
-        addObject(new Button(this::goHighScore, "highScoreButton.png", "highScoreButton.png"), getWidth()/2 , getHeight()/2 + 180);
+        addObject(new Button(this::goHighScore, "highScoreButton.png", "highScoreButton.png"), 102, 371);
         
         LevelTitle title = new LevelTitle(); 
         addObject(title, 300, 130); 
