@@ -25,6 +25,8 @@ public class PlayerInput extends Actor
     private int fadeOpacity = 255;
     private int levelFailOpacity = 255;
     
+    
+    
     public PlayerInput(ArrayList<String> words, World levelWorld)
     {
         setImage((GreenfootImage) null);
@@ -180,7 +182,9 @@ public class PlayerInput extends Actor
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
         
-        if(correctAnswers >= (wordsToMemorize.size() + 1) / 2 && levelClearActor == null)
+        int passThreshold = (wordsToMemorize.size() + 1) / 2;
+        
+        if(correctAnswers >= passThreshold && levelClearActor == null)
         {
             HighScoreManager.addHighScore("globalHighScore", 1); 
             
@@ -194,7 +198,7 @@ public class PlayerInput extends Actor
             world.addObject(levelClearActor, world.getWidth() / 2, world.getHeight() / 2);
 
         }
-        else if (correctAnswers < wordsToMemorize.size() / 2 && levelFailActor == null)// if half the answers are wrong it is considered a fail
+        else if (correctAnswers < passThreshold && levelFailActor == null)// if half the answers are wrong it is considered a fail
         {
             GreenfootImage levelFailText = new GreenfootImage("levelFailed.png");
             levelFailText.scale(400, 38);
