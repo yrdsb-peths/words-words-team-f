@@ -60,7 +60,7 @@ public class InstructionScreen extends World
         if (levelName.equals("Level 1"))
         {
             addObject(new LevelOneTitle(), 300, 130);
-            instructions = "You've started a resteruant, the customers are waiting...";
+            instructions = "You've started a resturant, \nthe customers are waiting...";
         } 
         else if (levelName.equals("Level 2"))
         {

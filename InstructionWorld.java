@@ -20,6 +20,7 @@ public class InstructionWorld extends World
         super(600, 400, 1);
         background = new GreenfootImage("InstructionScreen.png");
         showInstructions();
+        addObject(new Button(this::goLevelSelect, "small button_.png","small button_.png"), 35,45);
     }
     public void act()
     {
@@ -56,5 +57,9 @@ public class InstructionWorld extends World
     {
         String instructions = "You have started your very own resturant!\n\n Your mission is to memorize all the ingredients,\n\n and repeat them in the given order!\n\n Goodluck Chef! Let's start this fiesta!";
         showText(instructions, getWidth() / 2, getHeight() / 2);
+    }
+    private void goLevelSelect()
+    {
+        Greenfoot.setWorld(new LevelSelect());
     }
 }
