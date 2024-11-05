@@ -53,7 +53,7 @@ public class LevelOne extends World
     
         showWords(wordsToMemorize);  // Display the words to memorize
         
-        setPaintOrder(LevelClearActor.class, Button.class, TextBox.class, PlayerInput.class);
+        setPaintOrder(LevelFailActor.class, LevelClearActor.class, Button.class, TextBox.class, PlayerInput.class);
         
     }
     

@@ -20,7 +20,10 @@ public class PlayerInput extends Actor
     private boolean buttonCreated = false;
     
     private Actor levelClearActor = null;
+    private Actor levelFailActor = null;
+    
     private int fadeOpacity = 255;
+    private int levelFailOpacity = 255;
     
     public PlayerInput(ArrayList<String> words, World levelWorld)
     {
@@ -61,6 +64,21 @@ public class PlayerInput extends Actor
                 levelClearActor = null;
             }
         }
+        
+        
+        if(levelFailActor != null && levelFailOpacity > 0)
+        {
+            levelFailOpacity -= 1;
+            if(levelFailOpacity < 0) levelFailOpacity = 0;
+            levelFailActor.getImage().setTransparency(levelFailOpacity);
+            if(levelFailOpacity == 0)
+            {
+                levelWorld.removeObject(levelFailActor);
+                levelFailActor = null;
+            }
+        }
+    
+        
     }
     
     public void enableInput()
@@ -162,7 +180,7 @@ public class PlayerInput extends Actor
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
         
-        if(correctAnswers == wordsToMemorize.size() && levelClearActor == null)
+        if(correctAnswers >= (wordsToMemorize.size() + 1) / 2 && levelClearActor == null)
         {
             HighScoreManager.addHighScore("globalHighScore", 1); 
             
@@ -176,7 +194,14 @@ public class PlayerInput extends Actor
             world.addObject(levelClearActor, world.getWidth() / 2, world.getHeight() / 2);
 
         }
-        
+        else if (correctAnswers < wordsToMemorize.size() / 2 && levelFailActor == null)// if half the answers are wrong it is considered a fail
+        {
+            GreenfootImage levelFailText = new GreenfootImage("levelFailed.png");
+            levelFailText.scale(400, 38);
+            levelFailText.setTransparency(levelFailOpacity);
+            levelFailActor = new LevelFailActor(levelFailText);
+            world.addObject(levelFailActor, world.getWidth() / 2, world.getHeight() / 2);
+        }
         getWorld().addObject(new Button(this:: goProceed, "proceed.png", "proceed.png"), world.getWidth()/2, world.getHeight()/2 + 170); 
         
     }
