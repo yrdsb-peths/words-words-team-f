@@ -23,7 +23,8 @@ public class LevelOne extends World
     
     private int correctAnswers = 0;
     
-
+    
+    
     public LevelOne() {    
         super(600, 400, 1);         
     
@@ -51,6 +52,9 @@ public class LevelOne extends World
         addObject(playerInput, 300, 350);
     
         showWords(wordsToMemorize);  // Display the words to memorize
+        
+        setPaintOrder(LevelClearActor.class, Button.class, TextBox.class, PlayerInput.class);
+        
     }
     
     public void act()
