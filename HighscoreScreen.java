@@ -22,7 +22,7 @@ public class HighscoreScreen extends World
         background = new GreenfootImage("checkScore.png");
         setBackground(background);
         
-        addObject(new Button(this::goLevelSelect, "levelSelect.png","levelSelect.png"), 110,45);
+        addObject(new Button(this::goLevelSelect, "small button_.png","small button_.png"), 35,45);
 
     }
     
