@@ -15,8 +15,11 @@ Level 3: Space ship
 [Map]
 2. We also used `Map` to 
 
-# Additional information
-1. 
+# Additional information (Features)
+1. Music Manager 
+- The `MusicManager` is a seperate class that 
+- dwa
+2. Randomized textbox colors
 
 
 
