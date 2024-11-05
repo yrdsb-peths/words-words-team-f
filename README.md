@@ -1,3 +1,16 @@
+
+# Group Members
+- Ryan Ho 
+- Scarlett Ho 
+- Nicholas Chau
+
+# Data Structures used and summary of its purpose.
+
+1. 
+
+
+
+//Presets
 # Set up Greenfoot for VSCode
 
 [Mac]
