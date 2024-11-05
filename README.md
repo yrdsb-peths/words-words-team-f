@@ -7,7 +7,10 @@
 # Data Structures used and summary of its purpose.
 
 [List]
-1. We used `List` to manage a [], this segment of code can be found in the []. It serves as an important function to keep the game in a flow or smooth manner
+1. We used the `List` data structure to create a `WordList`, this segment of code can be found in the `WordList` Actor class. It includes an arrayList and are seperated into three parts to match the three differnt levels. The differnt levels will be listed in the following: 
+Level 1: Kitchen setting
+Level 2: Pirate ship
+Level 3: Space ship
 
 [Map]
 2. We also used `Map` to 
