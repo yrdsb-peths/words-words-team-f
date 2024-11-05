@@ -23,7 +23,18 @@ public class LevelOne extends World
     
         MusicManager.stopMusic();
         setBackground(new GreenfootImage("map1bg.png"));
-        
+        Level-Scarlett
+        TextBox textBox = new TextBox();
+        TextBox textBoxTwo = new TextBox();
+        TextBox textBoxThree = new TextBox(); 
+    
+        addObject(textBox, 104, 206);
+        addObject(textBoxTwo, 307, 206);
+        addObject(textBoxThree, 503, 206);
+    
+        //public vpo
+        wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));
+        main
         
         wordPool = new ArrayList<>(Arrays.asList("tomato", "cucumber", "carrot", "egg", "flour", "milk", "love", "sugar"));
         
