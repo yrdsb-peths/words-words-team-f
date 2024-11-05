@@ -27,7 +27,7 @@ public class HighscoreScreen extends World
         Map<String, Integer> highScores = HighScoreManager.getAllHighScores();
         
         int yPosition = 100; 
-        showText("levels Cleared:", getWidth()/2 , 50);
+        showText("HIGHSCORE:", getWidth()/2 , 100);
         
         for(Map.Entry<String, Integer> entry : highScores.entrySet())
         {

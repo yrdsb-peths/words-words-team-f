@@ -12,7 +12,7 @@ public class LevelThree extends World
 {
     private boolean gameStarted = false;
     private boolean memorizationPhase = true;
-    private int memorizationTime = 420; // 7 seconds (7 * 60 FPS)
+    private int memorizationTime = 1200; // 20 seconds (20 * 60 FPS)
     
     private ArrayList<String> wordsToMemorize;
     private PlayerInput playerInput;
