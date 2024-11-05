@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class HighscoreScreen extends World
 {
-    private GreenfootImage backGround;
+    private GreenfootImage background;
     /**
      * Constructor for objects of class HighscoreScreen.
      * 
@@ -19,7 +19,8 @@ public class HighscoreScreen extends World
         
         super(600, 400, 1);
         displayHighScores(); 
-        
+        background = new GreenfootImage("checkScore.png");
+        setBackground(background);
     }
     
     private void displayHighScores()
@@ -27,15 +28,13 @@ public class HighscoreScreen extends World
         Map<String, Integer> highScores = HighScoreManager.getAllHighScores();
         
         int yPosition = 100; 
-        showText("HIGHSCORE:", getWidth()/2 , 100);
-        
         for(Map.Entry<String, Integer> entry : highScores.entrySet())
         {
             String levelName = entry.getKey(); 
             int clearCount = entry.getValue();
             
             
-            showText(levelName + ": " + clearCount + " clears", getWidth() / 2, yPosition);
+            showText(levelName + ": " + clearCount + " clears", getWidth() / 2, yPosition - 5);
             yPosition += 30;
         }
         
