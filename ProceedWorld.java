@@ -13,6 +13,7 @@ public class ProceedWorld extends World
         
         MusicManager.stopKitchenMus();
         MusicManager.stopPirateMus(); 
+        MusicManager.stopLevelThreeMus(); 
         
         background = new GreenfootImage("cyabStripeBg.png");
         //starting point for background2 hover
@@ -76,6 +77,7 @@ public class ProceedWorld extends World
     {
         //Greenfoot.setWorld(new LevelOne());
     }
-
+    
+    
     
 }
