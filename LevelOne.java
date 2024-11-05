@@ -20,7 +20,7 @@ public class LevelOne extends World
     private List<String> wordPool;  // Larger pool of words to choose from
     //
     // High score map
-    private static Map<String, Integer> highScores = new HashMap<>();
+    
     private int correctAnswers = 0;
     
 

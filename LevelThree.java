@@ -19,10 +19,10 @@ public class LevelThree extends World
     private List<String> wordPool;  // Larger pool of words to choose from
     //
     // High score map
-    private static Map<String, Integer> highScores = new HashMap<>();
+    
     private int correctAnswers = 0;
     
-
+    
     public LevelThree() {    
         super(600, 400, 1);         
     
@@ -31,7 +31,7 @@ public class LevelThree extends World
        
         
         setBackground(new GreenfootImage("map3bg.png"));
-
+    
         //public vpo
         wordPool = new ArrayList<>(); 
         loadWordsFromFile("levelThreeList.txt");
@@ -104,7 +104,7 @@ public class LevelThree extends World
     }
     
     
-   private void showWords(ArrayList<String> words)
+    private void showWords(ArrayList<String> words)
     {
         for (int i = 0; i < words.size(); i++)
         {
@@ -124,11 +124,11 @@ public class LevelThree extends World
         // Clear the timer and other text on the screen
         showText("", 300, 50);  // Clear the timer
     }
-
+    
     private void startInputPhase() 
     {
         showText("Fill the boxes with the ingredients that you remember\nORDER MATTERS!", 300, 100);
         playerInput.enableInput();
     }
-    
+
 }

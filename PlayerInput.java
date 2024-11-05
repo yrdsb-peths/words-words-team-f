@@ -132,7 +132,7 @@ public class PlayerInput extends Actor
     
             // Display correct or incorrect for each word
             if (correctWord.equals(input)) {
-                world.showText("(OK)", xPosition, yPosition);
+                world.showText("(YES)", xPosition, yPosition);
                 correctAnswers++;
             } else {
                 world.showText("(NO)", xPosition, yPosition);
@@ -140,6 +140,12 @@ public class PlayerInput extends Actor
         }
     
         world.showText("Correct Ingredients: " + correctAnswers + " out of " + wordsToMemorize.size(), 300, wordYPosition + 130);
+        
+        if(correctAnswers == wordsToMemorize.size())
+        {
+            HighScoreManager.addHighScore("globalHighScore", 1); 
+        }
+        
         getWorld().addObject(new Button(this:: goProceed, "proceed.png", "proceed.png"), world.getWidth()/2, world.getHeight()/2 + 170); 
         
     }
