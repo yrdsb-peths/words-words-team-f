@@ -22,7 +22,11 @@ public class LevelManager
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    
+    //intialize levels as instances
+    static
+    {
+        
+    }
     public static World getCurrentLevel()
     {
         
