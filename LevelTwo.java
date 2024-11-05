@@ -7,8 +7,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-
-
 public class LevelTwo extends World
 {
     private boolean gameStarted = false;
@@ -33,7 +31,7 @@ public class LevelTwo extends World
         
         setBackground(new GreenfootImage("map2bg.png"));
 
-        //public vpo
+       
         wordPool = new ArrayList<>();
         loadWordsFromFile("levelTwoList.txt");
         
