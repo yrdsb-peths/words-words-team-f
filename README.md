@@ -1,3 +1,29 @@
+
+# Group Members
+- Ryan Ho 
+- Scarlett Ho 
+- Nicholas Chau
+
+# Data Structures used and summary of its purpose.
+
+[List]
+1. We used the `List` data structure to create a `WordList`, this segment of code can be found in the `WordList` Actor class. It includes an arrayList and are seperated into three parts to match the three differnt levels. The differnt levels will be listed in the following: 
+Level 1: Kitchen setting
+Level 2: Pirate ship
+Level 3: Space ship
+
+[Map]
+2. We also used `Map` to 
+
+# Additional information (Features)
+1. Music Manager 
+- The `MusicManager` is a seperate class that 
+- dwa
+2. Randomized textbox colors
+
+
+
+//Presets
 # Set up Greenfoot for VSCode
 
 [Mac]
