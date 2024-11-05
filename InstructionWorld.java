@@ -54,7 +54,7 @@ public class InstructionWorld extends World
     }
     public void showInstructions()
     {
-        String instructions = "You've started a resteruant, \nthe customers are waiting...";
+        String instructions = "You have started your very own resturant!\n\n Your mission is to memorize all the ingredients,\n\n and repeat them in the given order!\n\n Goodluck Chef! Let's start this fiesta!";
         showText(instructions, getWidth() / 2, getHeight() / 2);
     }
 }
