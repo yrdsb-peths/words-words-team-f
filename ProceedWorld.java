@@ -48,7 +48,7 @@ public class ProceedWorld extends World
         //update scroll position every 5 frames
         if(counter >= 5)
         {
-            scrollX += 1;   //scroll speed
+            scrollX += 2;   //scroll speed
             counter = 0; 
         }
 

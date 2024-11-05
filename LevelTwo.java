@@ -53,7 +53,7 @@ public class LevelTwo extends World
         addObject(textBoxFour, 410, 221);
         addObject(textBoxFive, 503, 221);
       
-        playerInput = new PlayerInput(wordsToMemorize, this);
+        playerInput = new PlayerInput("Level 2",wordsToMemorize, this);
         addObject(playerInput, 300, 350);
     
         showWords(wordsToMemorize);  // Display the words to memorize
