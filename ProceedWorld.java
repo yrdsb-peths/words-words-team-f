@@ -17,7 +17,7 @@ public class ProceedWorld extends World
         //buttons for all functions
         addObject(new Button(this:: goLevelSelect, "levelSelect.png", "levelSelect.png"), getWidth()/2, getHeight()/2);
         addObject(new Button(this:: goBackMenu, "menu.png", "menu.png"), getWidth()/2, getHeight()/2 + 60);
-        
+        addObject(new Button(this:: ))
         ProceedText here = new ProceedText();
         addObject(here, 300, 130);
     }
@@ -59,9 +59,11 @@ public class ProceedWorld extends World
     {
         Greenfoot.setWorld(new MenuScreen());
     }
-    private void goReplay()
+    private void goNextLevel()
     {
-        //Greenfoot.setWorld(new LevelOne());
+        LevelManager.nextLevel();
+        World nextLevel = LevelManager.getCurrentLevel();
+        Greenfoot.setWorld(new nextLevel());
     }
 
     
