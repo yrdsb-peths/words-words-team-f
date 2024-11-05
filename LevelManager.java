@@ -34,11 +34,11 @@ public class LevelManager
     {
         if(currentLevel < levels.size())
         {
-            return levels.get(currentLevel);
+            return levels.get(currentLevel); 
         }
         else
         {
-            return new ProceedWorld();
+            return new ProceedWorld(); //the end of the level should take you to the proceedscreen
         }
     }
     

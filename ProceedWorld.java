@@ -15,8 +15,11 @@ public class ProceedWorld extends World
         scrollX = 0;
         
         //buttons for all functions
+        //lets user decide which level they wanna play next
         addObject(new Button(this:: goLevelSelect, "levelSelect.png", "levelSelect.png"), getWidth()/2, getHeight()/2);
+        //takes player back to menu screen
         addObject(new Button(this:: goBackMenu, "menu.png", "menu.png"), getWidth()/2, getHeight()/2 + 60);
+        //tracks which level player is currently on and next level will take you to the next
         addObject(new Button(this:: goNextLevel, "NextLevel.png", "NextLevel.png"), getWidth()/2, getHeight()/2 + 120);
         ProceedText here = new ProceedText();
         addObject(here, 300, 130);
