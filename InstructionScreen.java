@@ -64,12 +64,12 @@ public class InstructionScreen extends World
         } 
         else if (levelName.equals("Level 2"))
         {
-            addObject(new LevelOneTitle(), 300, 130);
+            addObject(new LevelTwoTitle(), 300, 130);
             instructions = "pirates have taken you captive,\ncreate a meal to satisfy their hunger!";
         } 
         else if (levelName.equals("Level 3"))
         { 
-            addObject(new LevelOneTitle(), 300, 130);
+            addObject(new LevelThreeTitle(), 300, 130);
             instructions = "Humans have migrated to the moon,\ncreate out of the world meals to celebrate!";
         }
         showText(instructions, getWidth() / 2, getHeight() / 2);
