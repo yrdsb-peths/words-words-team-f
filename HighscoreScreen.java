@@ -21,6 +21,9 @@ public class HighscoreScreen extends World
         displayHighScores(); 
         background = new GreenfootImage("checkScore.png");
         setBackground(background);
+        
+        addObject(new Button(this::goLevelSelect, "small button_.png","small button_.png"), 35,45);
+
     }
     
     private void displayHighScores()
@@ -34,11 +37,16 @@ public class HighscoreScreen extends World
             int clearCount = entry.getValue();
             
             
-            showText(levelName + ": " + clearCount + " clears", getWidth() / 2, yPosition - 5);
+            showText(levelName + ": " + clearCount + " clears", getWidth() / 2, getHeight()/2);
             yPosition += 30;
         }
         
         
+    }
+    
+    private void goLevelSelect()
+    {
+        Greenfoot.setWorld(new LevelSelect());
     }
     
 }

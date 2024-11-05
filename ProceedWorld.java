@@ -7,7 +7,7 @@ public class ProceedWorld extends World
     private GreenfootImage proceedText;
     private int scrollX;
     private int counter;
-    public static GreenfootSound proceedBg = new GreenfootSound("Full Moon Full Life (Instrumental).mp3");
+    public static GreenfootSound proceedBg = new GreenfootSound("fullMoonMusic.mp3");
 
     
     public ProceedWorld()
@@ -83,14 +83,5 @@ public class ProceedWorld extends World
         MusicManager.playBgMusic();
         Greenfoot.setWorld(new MenuScreen());
     }
-    
-    private void goNextLevel()
-    {
-        LevelManager.nextLevel();
-        World nextLevel = LevelManager.getCurrentLevel();
-        Greenfoot.setWorld(nextLevel);
-    }
-    
-    
     
 }
