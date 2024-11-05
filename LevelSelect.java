@@ -40,6 +40,9 @@ public class LevelSelect extends World
         
         //back to menu button
         addObject(new Button(this::goMenu, "returnButton.png", "returnButton.png"), 110, 45);
+        
+        //new instructions screen button
+        addObject(new Button(this::goInstructions, "instructions.png","instructions.png"), 499,371);
     }
     
     public void act()
@@ -103,4 +106,8 @@ public class LevelSelect extends World
         Greenfoot.setWorld(new MenuScreen());
     }
     
+    private void goInstructions()
+    {
+        Greenfoot.setWorld(new InstructionWorld()); 
+    }
 }
