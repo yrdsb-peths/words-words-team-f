@@ -7,7 +7,38 @@ public class MusicManager
     public static GreenfootSound bgMusic = new GreenfootSound("Pokemon ORAS Soundtrack - Flight to Space (128kbps).mp3");
     public static GreenfootSound bgPirateMusic = new GreenfootSound("Pirate Encounter - Pokémon Clover Soundtrack (128kbps).mp3");
     public static GreenfootSound bgLevelOne = new GreenfootSound("[YT2mp3.info] - Overcooked - Main Menu SONG (320kbps).mp3"); 
+    public static GreenfootSound bgLevelThree = new GreenfootSound("Rainbow Road - Mario Kart 8 Deluxe OST.mp3");
     
+    
+    //methods for level 3 music
+    public static void playLevelThreeMus()
+    {
+        if(!bgLevelThree.isPlaying())
+        {
+            bgLevelThree.playLoop();
+            bgLevelThree.setVolume(40); 
+        }
+    }
+    
+    public static void stopLevelThreeMus()
+    {
+        if(bgLevelThree.isPlaying())
+        {
+            bgLevelThree.pause(); 
+        }
+    }
+    
+    public static void pauseLevelThreeMus()
+    {
+        if(bgLevelThree.isPlaying())
+        {
+            bgLevelThree.pause(); 
+        }
+    }
+    
+    
+    
+    //methods for level 1 music
     public static void playKitchenMus()
     {
         if(!bgLevelOne.isPlaying())
@@ -33,6 +64,9 @@ public class MusicManager
         }
     }
     
+    
+    
+    //methods for level 2 music
     
     public static void playPirateMus()
     {
