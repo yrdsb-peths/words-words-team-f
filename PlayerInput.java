@@ -96,6 +96,7 @@ public class PlayerInput extends Actor
         int spacing = screenWidth / (numWords - 1); 
         double scaleFactor = 0.73; //reduce the spacing by this amount 
         int adjustedSpacing = (int)(spacing * scaleFactor);
+        
         //display words at specific positions
         for(int i = 0; i < userInputs.size(); i++)
         {
@@ -104,8 +105,14 @@ public class PlayerInput extends Actor
             world.showText(userInputs.get(i), xPosition + 78, yPosition);
         }
         
-         //display current word being typed
-        world.showText("(type here): " + currentWord, 300, wordYPosition + 110);
+        if (!allWordsFilled())
+        {
+            world.showText("(type here): " + currentWord, 300, wordYPosition + 110);
+        }
+        else
+        {
+            world.showText("", 300, wordYPosition + 110); // Clear the "(type here):" text
+        }
     }
     
     private void checkUserAnswers()
@@ -125,10 +132,10 @@ public class PlayerInput extends Actor
     
             // Display correct or incorrect for each word
             if (correctWord.equals(input)) {
-                world.showText("(Correct)", xPosition, yPosition);
+                world.showText("(OK)", xPosition, yPosition);
                 correctAnswers++;
             } else {
-                world.showText("(Incorrect)", xPosition, yPosition);
+                world.showText("(NO)", xPosition, yPosition);
             }
         }
     

@@ -28,7 +28,7 @@ public class LevelThree extends World
         MusicManager.stopBgMusic();
         MusicManager.playLevelThreeMus(); 
         
-        setBackground(new GreenfootImage("map1bg.png"));
+        setBackground(new GreenfootImage("map3bg.png"));
 
         //public vpo
         wordPool = new ArrayList<>(); 
@@ -37,18 +37,22 @@ public class LevelThree extends World
         Collections.shuffle(wordPool);  // Shuffle the word pool  
         wordsToMemorize = new ArrayList<>(wordPool.subList(0, 7));
     
-        TextBox textBox = new TextBox(wordsToMemorize.get(0), 110, 150);
-        TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1), 110, 150);
-        TextBox textBoxThree = new TextBox(wordsToMemorize.get(2), 110, 150); 
-        TextBox textBoxFour = new TextBox(wordsToMemorize.get(3), 110, 150); 
-        TextBox textBoxFive = new TextBox(wordsToMemorize.get(4), 110, 150); 
+        TextBox textBox = new TextBox(wordsToMemorize.get(0), 85, 150);
+        TextBox textBoxTwo = new TextBox(wordsToMemorize.get(1), 85, 150);
+        TextBox textBoxThree = new TextBox(wordsToMemorize.get(2), 85, 150); 
+        TextBox textBoxFour = new TextBox(wordsToMemorize.get(3), 85, 150); 
+        TextBox textBoxFive = new TextBox(wordsToMemorize.get(4), 85, 150);
+        TextBox textBoxSix = new TextBox(wordsToMemorize.get(5), 85, 150);
+        TextBox textBoxSeven = new TextBox(wordsToMemorize.get(6), 85, 150);
         
-        addObject(textBox, 104, 221);
-        addObject(textBoxTwo, 307, 221);
-        addObject(textBoxThree, 503, 221);
-        addObject(textBoxFour, 210, 221);
-        addObject(textBoxFive, 410, 221);
-      
+        addObject(textBox, 45, 221);
+        addObject(textBoxTwo, 134, 221);
+        addObject(textBoxThree, 223, 221);
+        addObject(textBoxFour, 309, 221);
+        addObject(textBoxFive, 391, 221);
+        addObject(textBoxSix, 476, 221);
+        addObject(textBoxSeven, 562 , 221);
+        
         playerInput = new PlayerInput(wordsToMemorize, this);
         addObject(playerInput, 300, 350);
     
@@ -100,34 +104,20 @@ public class LevelThree extends World
     
    private void showWords(ArrayList<String> words)
     {
-        TextBox textBox = (TextBox)getObjects(TextBox.class).get(0);
-        TextBox textBoxTwo = (TextBox)getObjects(TextBox.class).get(1);
-        TextBox textBoxThree = (TextBox)getObjects(TextBox.class).get(2);
-        TextBox textBoxFour = (TextBox)getObjects(TextBox.class).get(3);
-        TextBox textBoxFive = (TextBox)getObjects(TextBox.class).get(4);
-        
-        textBox.showText(words.get(0)); 
-        textBoxTwo.showText(words.get(1));
-        textBoxThree.showText(words.get(2));
-        textBoxFour.showText(words.get(3));
-        textBoxFive.showText(words.get(4));
+        for (int i = 0; i < words.size(); i++)
+        {
+            TextBox textBox = (TextBox) getObjects(TextBox.class).get(i);
+            textBox.showText(words.get(i));
+        }
     }
-
     
     private void clearWords()
     {
-        // Clear the text in each TextBox
-        TextBox textBox = (TextBox)getObjects(TextBox.class).get(0);
-        TextBox textBoxTwo = (TextBox)getObjects(TextBox.class).get(1);
-        TextBox textBoxThree = (TextBox)getObjects(TextBox.class).get(2);
-        TextBox textBoxFour = (TextBox)getObjects(TextBox.class).get(3);
-        TextBox textBoxFive = (TextBox)getObjects(TextBox.class).get(4);
-        
-        textBox.showText("");  // Clear the text in the first box
-        textBoxTwo.showText("");  // Clear the text in the second box
-        textBoxThree.showText("");  // Clear the text in the third box
-        textBoxFour.showText("");  // Clear the text in the fourth box
-        textBoxFive.showText(""); //Clear the text in the fifth box
+        for (int i = 0; i < getObjects(TextBox.class).size(); i++)
+        {
+            TextBox textBox = (TextBox) getObjects(TextBox.class).get(i);
+            textBox.showText("");
+        }
         
         // Clear the timer and other text on the screen
         showText("", 300, 50);  // Clear the timer
