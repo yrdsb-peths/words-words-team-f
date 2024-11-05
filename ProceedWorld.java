@@ -17,7 +17,6 @@ public class ProceedWorld extends World
         //buttons for all functions
         addObject(new Button(this:: goLevelSelect, "levelSelect.png", "levelSelect.png"), getWidth()/2, getHeight()/2);
         addObject(new Button(this:: goBackMenu, "menu.png", "menu.png"), getWidth()/2, getHeight()/2 + 60);
-        //addObject(new Button(this:: goReplay, "LevelOneButton.png", "LevelOneButton.png"), getWidth()/2, getHeight()/2 + 120);
         
         ProceedText here = new ProceedText();
         addObject(here, 300, 130);

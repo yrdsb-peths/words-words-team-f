@@ -23,12 +23,27 @@ public class LevelManager
      * @return     the sum of x and y 
      */
     //intialize levels as instances
+    //the instances allow levels to have a copy of its data
     static
     {
-        
+        levels.add(new LevelOne());
+        levels.add(new LevelTwo());
+        levels.add(new LevelThree());
     }
     public static World getCurrentLevel()
     {
-        
+        if(currentLevel < levels.size())
+        {
+            return levels.get(currentLevel);
+        }
+        else
+        {
+            return new ProceedWorld();
+        }
+    }
+    
+    public static void nextLevel()
+    {
+        currentLevel++;
     }
 }
