@@ -6,6 +6,13 @@
 
 # Data Structures used and summary of its purpose.
 
+[List]
+1. We used `List` to manage a [], this segment of code can be found in the []. It serves as an important function to keep the game in a flow or smooth manner
+
+[Map]
+2. We also used `Map` to 
+
+# Additional information
 1. 
 
 
