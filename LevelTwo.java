@@ -6,6 +6,7 @@ import java.util.Map;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.List;
 
 public class LevelTwo extends World
 {
@@ -15,7 +16,7 @@ public class LevelTwo extends World
     
     private ArrayList<String> wordsToMemorize;
     private PlayerInput playerInput;
-    private ArrayList<String> wordPool;  // Larger pool of words to choose from
+    private List<String> wordPool;  // Larger pool of words to choose from
     
     
     // High score map
@@ -27,7 +28,8 @@ public class LevelTwo extends World
         
         //music stop and start 
         MusicManager.stopBgMusic();
-        MusicManager.playPirateMus();
+        MusicManager.restartPirateMus(); 
+    
         
         setBackground(new GreenfootImage("map2bg.png"));
 

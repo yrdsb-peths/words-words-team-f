@@ -6,6 +6,7 @@ import java.util.Map;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.List;
 
 public class LevelThree extends World
 {
@@ -15,7 +16,7 @@ public class LevelThree extends World
     
     private ArrayList<String> wordsToMemorize;
     private PlayerInput playerInput;
-    private ArrayList<String> wordPool;  // Larger pool of words to choose from
+    private List<String> wordPool;  // Larger pool of words to choose from
     //
     // High score map
     private static Map<String, Integer> highScores = new HashMap<>();
@@ -26,7 +27,8 @@ public class LevelThree extends World
         super(600, 400, 1);         
     
         MusicManager.stopBgMusic();
-        MusicManager.playLevelThreeMus(); 
+        MusicManager.restartLevelThreeMus();
+       
         
         setBackground(new GreenfootImage("map3bg.png"));
 
