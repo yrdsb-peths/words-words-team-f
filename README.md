@@ -30,7 +30,7 @@
 - Within `LevelOne`, `LevelTwo`, and `LevelThree` a memorizationPhase is present to set up a `memorizationTime`. A countdown timer is displayed for the player.
 4. Buttons
 - This object is used mostly before and after the game's content (after a level is finished).
-- Button plays a sound effect when selected
+- Button plays a sound effect when clicked
 - Button increases in size when hovered over
 - `public Button (Runnable action, String imageName, String hoveringName)`
 5. Scrolling background
