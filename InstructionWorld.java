@@ -55,9 +55,12 @@ public class InstructionWorld extends World
     }
     public void showInstructions()
     {
-        String instructions = "You have started your very own resturant!\n\n Your mission is to memorize all the ingredients,\n\n and repeat them in the given order!\n\n Goodluck Chef! Let's start this fiesta!";
-        showText(instructions, getWidth() / 2, getHeight() / 2);
+        String instructions = "Your job is to memorize all the ingredients,\n\n and repeat them in the given order!\n<ENTER> to finish the word\n<BACKSPACE> to undo!\nAfter the timer ends, Start Typing!\n\nget more than half to pass the level!\nGoodluck Chef! Let's start this fiesta!";
+        
+        InstructionText instructionText = new InstructionText(instructions);
+        addObject(instructionText, getWidth() / 2, getHeight() / 2); 
     }
+
     private void goLevelSelect()
     {
         Greenfoot.setWorld(new LevelSelect());
