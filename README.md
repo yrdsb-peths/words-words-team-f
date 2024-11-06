@@ -8,12 +8,14 @@
 
 [List]
 1. We used the `List` data structure to create a `WordList`, this segment of code can be found in the `WordList` Actor class. It includes an arrayList and are seperated into three parts to match the three different levels. The different levels will be listed in the following: 
-- Level 1: Kitchen setting
+- Level 1: Kitchen
 - Level 2: Pirate ship
 - Level 3: Spaceship
 
 [Map]
-2. The `Map` data structure was used to create a tracker that tracks the levels the player has cleared so far. The code can be found in 
+2. The `Map` data structure was used to create a tracker that tracks the levels the player has cleared so far. The code can be found in the `HighscoreScreen` world, and the purpose of the `HighscoreScreen` is to show players the amount of times a level is cleared in that speific level. 
+- When theres no levels cleared it will display a "No highscores" text
+- When a certain level is cleared, it will display (e.g. Level 1: 2 clears)
 
 # Additional information (Features)
 1. Music Manager 
