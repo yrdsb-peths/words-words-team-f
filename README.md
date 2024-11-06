@@ -15,7 +15,7 @@
 
 [Map]
 
-2. The `Hashmap` data structure was used to create a tracker that tracks the levels the player has cleared so far. The code can be found in the `HighscoreScreen` world, and the purpose of the `HighscoreScreen` is to show players the number of times a level is cleared in that specific level. 
+2. The `Hashmap` data structure created a tracker that tracks the player has cleared levels so far. The code can be found in the `HighscoreScreen` world, which shows players the number of times a level is cleared in that specific level. 
 - When there are no levels cleared it will display a "No high scores" text
 - When a certain level is cleared, it will display (e.g. Level 1: 2 clears)
 
