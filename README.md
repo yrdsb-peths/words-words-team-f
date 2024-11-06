@@ -41,6 +41,7 @@
 - More than half correct = A clear
 - Less than half correct = A fail
 8. Abstract classes
+- Abstract class called LevelLogo, used on LevelOneTitle, LevelTwoTitle, LevelThreeTitle
 
 
 
