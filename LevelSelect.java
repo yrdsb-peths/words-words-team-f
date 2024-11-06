@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class LevelSelect extends World
+public class LevelSelect extends World implements Scrollable
 {
     private GreenfootImage background;
     private GreenfootImage differentMapText;
@@ -51,7 +51,7 @@ public class LevelSelect extends World
     }
 
     
-    private void scrollBackground()
+    public void scrollBackground()
     {
         counter++; // increase the counter
         

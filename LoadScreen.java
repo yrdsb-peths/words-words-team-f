@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class LoadScreen extends World
+public class LoadScreen extends World implements Scrollable
 {
     private String levelName;
     private GreenfootImage background;
@@ -23,11 +23,13 @@ public class LoadScreen extends World
         showInstructions();
         addStartButton();
     }
+    
     public void act()
     {
         scrollBackground();
     }
-    private void scrollBackground()
+    
+    public void scrollBackground()
     {
         counter++; // increase the counter
         
