@@ -8,7 +8,7 @@
 
 [List]
 
-1. We used the `List` data structure to create a `WordList`/`Word pool`, the list of words is in a TXT file and it can be seen in use throughout Level One, Two and Three. It includes an arrayList and is divided to correspond to the three levels which have different ingredients. Using `List` is important in creating more organized and efficient code since the words are stored in one class and is made accessible to other worlds. The different levels will be listed in the following: 
+1. We used the `List` data structure to create a `WordList`/`Word pool`, the list of words is in a TXT file and it can be seen in use throughout Levels One, Two, and Three. It includes an array list and is divided to correspond to the three levels which have different ingredients. Using `List` is important in creating more organized and efficient code since the words are stored in one file and are made accessible to other worlds. The different levels will be listed in the following: 
 - Level 1: Kitchen
 - Level 2: Pirate ship
 - Level 3: Spaceship
@@ -34,8 +34,12 @@
 - Button increases in size when hovered over
 - `public Button (Runnable action, String imageName, String hoveringName)`
 5. Scrolling background
+- For the background image of `LevelSelect`, `ProceedWorld`, `InstructionScreen`and `InstructionWorld`. A scrolling background is used.
 6. Interfaces
 - Levels 1, 2, and 3 implement `loadable`, `showable`, `clearable`, and `startable`
+7. Level clear conditions
+- More than half correct = A clear
+- Less than half correct = A fail
 
 
 
