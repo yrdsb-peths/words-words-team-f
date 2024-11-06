@@ -40,6 +40,7 @@
 7. Level clear conditions
 - More than half correct = A clear
 - Less than half correct = A fail
+8. Abstract classes
 
 
 
