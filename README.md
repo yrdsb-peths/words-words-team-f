@@ -34,7 +34,7 @@
 - Button increases in size when hovered over
 - `public Button (Runnable action, String imageName, String hoveringName)`
 5. Scrolling background
-- For the background image of `LevelSelect`, `ProceedWorld`, `InstructionScreen`and `InstructionWorld`. A scrolling background is used.
+- For the background image of `LevelSelect`, `ProceedWorld`, `InstructionScreen`and `LoadScreen`. A scrolling background is used.
 6. Interfaces
 - Levels 1, 2, and 3 implement `loadable`, `showable`, `clearable`, and `startable`
 7. Level clear conditions
