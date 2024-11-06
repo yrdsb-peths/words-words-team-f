@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.List;
 
-public class LevelOne extends World
+public class LevelOne extends World implements LevelInterface
 {
     private boolean gameStarted = false;
     private boolean memorizationPhase = true;
@@ -23,8 +23,7 @@ public class LevelOne extends World
     
     private int correctAnswers = 0;
     
-    
-    
+
     public LevelOne() {    
         super(600, 400, 1);         
     
@@ -79,7 +78,7 @@ public class LevelOne extends World
     }
     
     
-    private void loadWordsFromFile(String filename)
+    public void loadWordsFromFile(String filename)
     {
         try{
             Scanner scan = new Scanner(new File(filename));
@@ -100,7 +99,7 @@ public class LevelOne extends World
     }
     
     
-    private void showWords(ArrayList<String> words)
+    public void showWords(ArrayList<String> words)
     {
         TextBox textBox = (TextBox)getObjects(TextBox.class).get(0);
         TextBox textBoxTwo = (TextBox)getObjects(TextBox.class).get(1);
@@ -111,7 +110,7 @@ public class LevelOne extends World
         textBoxThree.showText(words.get(2));
     }
     
-    private void clearWords()
+    public void clearWords()
     {
         // Clear the text in each TextBox
         TextBox textBox = (TextBox)getObjects(TextBox.class).get(0);
@@ -126,7 +125,7 @@ public class LevelOne extends World
         showText("", 300, 50);  // Clear the timer
     }
 
-    private void startInputPhase() 
+    public void startInputPhase() 
     {
         showText("Fill the boxes with the ingredients that you remember\nORDER MATTERS!", 300, 100);
         playerInput.enableInput();
