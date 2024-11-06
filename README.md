@@ -34,6 +34,8 @@
 - Button increases in size when hovered over
 - `public Button (Runnable action, String imageName, String hoveringName)`
 5. Scrolling background
+6. Interfaces
+- Levels 1, 2, and 3 implement `loadable`, `showable`, `clearable`, and `startable`
 
 
 
