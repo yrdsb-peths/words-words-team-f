@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.List;
 
-public class LevelOne extends World implements LevelInterface
+public class LevelOne extends World implements Loadable, Showable, Clearable, Startable
 {
     private boolean gameStarted = false;
     private boolean memorizationPhase = true;
