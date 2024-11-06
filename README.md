@@ -7,12 +7,14 @@
 # Data Structures used and summary of its purpose.
 
 [List]
+
 1. We used the `List` data structure to create a `WordList`/`Word pool`, the list of words is in a TXT file and it can be seen in use throughout Level One, Two and Three. It includes an arrayList and is divided to correspond to the three levels which have different ingredients. Using `List` is important in creating more organized and efficient code since the words are stored in one class and is made accessible to other worlds. The different levels will be listed in the following: 
 - Level 1: Kitchen
 - Level 2: Pirate ship
 - Level 3: Spaceship
 
 [Map]
+
 2. The `Hashmap` data structure was used to create a tracker that tracks the levels the player has cleared so far. The code can be found in the `HighscoreScreen` world, and the purpose of the `HighscoreScreen` is to show players the number of times a level is cleared in that specific level. 
 - When there are no levels cleared it will display a "No high scores" text
 - When a certain level is cleared, it will display (e.g. Level 1: 2 clears)
