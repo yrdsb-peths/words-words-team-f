@@ -37,6 +37,7 @@
 - For the background image of `LevelSelect`, `ProceedWorld`, `InstructionScreen`and `LoadScreen`. A scrolling background is used.
 6. Interfaces
 - Levels 1, 2, and 3 implement `loadable`, `showable`, `clearable`, and `startable`
+- `LevelSelect`, `ProceedWorld`, `InstructionScreen`and `LoadScreen` implements Scrollable
 7. Level clear conditions
 - More than half correct = A clear
 - Less than half correct = A fail
