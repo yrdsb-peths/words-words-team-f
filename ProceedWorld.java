@@ -1,7 +1,7 @@
 import greenfoot.*;
 import greenfoot.GreenfootImage;
 
-public class ProceedWorld extends World
+public class ProceedWorld extends World implements Scrollable
 {
     private GreenfootImage background;
     private GreenfootImage proceedText;
@@ -41,7 +41,7 @@ public class ProceedWorld extends World
         scrollBackground();
     }
     
-    private void scrollBackground()
+    public void scrollBackground()
     {
         counter++; // increase the counter
 

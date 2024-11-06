@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class InstructionWorld extends World
+public class InstructionWorld extends World implements Scrollable
 {
     private String levelName;
     private GreenfootImage background;
@@ -22,11 +22,13 @@ public class InstructionWorld extends World
         showInstructions();
         addObject(new Button(this::goLevelSelect, "small button_.png","small button_.png"), 35,45);
     }
+    
     public void act()
     {
         scrollBackground();
     }
-    private void scrollBackground()
+    
+    public void scrollBackground()
     {
         counter++; // increase the counter
         
